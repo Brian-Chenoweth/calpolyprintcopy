@@ -15,7 +15,7 @@ export default function ContactForm() {
   };
 
   if (state.succeeded) {
-    return <h3 className={styles.successMsg}>Thank you for submitting your request to comment at the Cal Maritime Corporation board meeting. Please arrive at least 15 minutes before the meeting begins, and check in with the meeting facilitator.</h3>;
+    return <h3 className={styles.successMsg}>Thank you for submitting your request to comment at the Cal Poly Print &amp; Copy board meeting. Please arrive at least 15 minutes before the meeting begins, and check in with the meeting facilitator.</h3>;
   }
 
   return (

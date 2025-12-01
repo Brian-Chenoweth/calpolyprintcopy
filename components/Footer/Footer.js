@@ -48,7 +48,7 @@ export default function Footer({
               <div className={cx('contact-info')}>
                 {/* modern Link */}
                 <Link href="/" className={cx('cppText')}>
-                  {title ?? 'Cal Maritime Corporation'}
+                  {title ?? 'Cal Poly Print & Copy'}
                 </Link>
 
                 <a

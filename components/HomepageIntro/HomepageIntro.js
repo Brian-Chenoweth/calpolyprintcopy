@@ -11,7 +11,7 @@ export default function HomepageIntro() {
 
           <div className={styles.content}>
             <p>
-              The strategic business partner to Cal Poly Solano Campus and Cal Poly Maritime Academy, the Cal Maritime Corporation provides the campus and the local community with innovative services through strategic business partnerships that continuously improve value and enhance the overall experience of our cadets.
+              The strategic business partner to Cal Poly Solano Campus and Cal Poly Maritime Academy, the Cal Poly Print &amp; Copy provides the campus and the local community with innovative services through strategic business partnerships that continuously improve value and enhance the overall experience of our cadets.
             </p>
           </div>
 

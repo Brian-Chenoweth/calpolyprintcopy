@@ -62,7 +62,7 @@ export default function Header({ className, menuItems }) {
 
       <div className={headerContentClasses}>
         <div className={cx('bar')}>
-          <a href="/" className={cx('titleName')}>Cal Maritime Corporation</a>
+          <a href="/" className={cx('titleName')}>Cal Poly Print &amp; Copy</a>
 
           <button
             type="button"
