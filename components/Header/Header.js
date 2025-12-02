@@ -42,8 +42,14 @@ export default function Header({ className, menuItems }) {
 
   return (
     <header className={headerClasses}>
-      <div className={logoWrapClasses}>
-        <div className="container">
+
+      <SkipNavigationLink />
+
+      <div className={headerContentClasses}>
+        <div className={cx('bar')}>
+
+          {/* <a href="/" className={cx('titleName')}>Cal Poly Print &amp; Copy</a> */}
+
           <div className={cx('logo')}>
             <Link href="/" title="Home">
               <Image
@@ -55,14 +61,7 @@ export default function Header({ className, menuItems }) {
               />
             </Link>
           </div>
-        </div>
-      </div>
-
-      <SkipNavigationLink />
-
-      <div className={headerContentClasses}>
-        <div className={cx('bar')}>
-          <a href="/" className={cx('titleName')}>Cal Poly Print &amp; Copy</a>
+          
 
           <button
             type="button"

@@ -138,7 +138,9 @@ export default function SEO({
   return (
     <>
       <Head>
-        {/* Fonts & Icons (kept from your original; consider moving to _document.tsx for perf) */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://use.typekit.net/umi1lem.css" />
         <link rel="stylesheet" href="https://use.typekit.net/mfv5sni.css" />
         <link rel="stylesheet" href="https://use.typekit.net/qnm1phw.css" />
