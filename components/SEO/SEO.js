@@ -139,7 +139,7 @@ export default function SEO({
     <>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://use.typekit.net/umi1lem.css" />
         <link rel="stylesheet" href="https://use.typekit.net/mfv5sni.css" />
