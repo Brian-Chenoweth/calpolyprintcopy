@@ -30,7 +30,6 @@ export default function Header({ className, menuItems }) {
   const menuRef = useRef(null);
 
   const headerClasses = cx('header', className, { scrolled: isScrolled });
-  const logoWrapClasses = cx('logo-wrap', { scrolled: isScrolled });
   const headerContentClasses = cx('container', 'header-content', { scrolled: isScrolled });
   const navClasses = cx('primary-navigation', isNavShown ? cx('show') : undefined);
 
