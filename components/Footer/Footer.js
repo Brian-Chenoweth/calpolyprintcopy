@@ -36,12 +36,12 @@ export default function Footer({
               </div>
 
               <div className={cx('resources')}>
-                <h3>Cal Poly Maritime Academy</h3>
+                <h3>Cal Poly Print &amp; Copy</h3>
                 <NavigationMenu className={cx('quick')} menuItems={resourcesMenuItems} />
               </div>
               
               <div className={cx('footer-nav')}>
-                <h3>Integration</h3>
+                <h3>Services, Supplies, and Equipment</h3>
                 <NavigationMenu className={cx('quick')} menuItems={menuItems} />
               </div>
 

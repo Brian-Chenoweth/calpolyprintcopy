@@ -47,13 +47,13 @@
   flex-wrap: wrap;
   padding: 1rem 0;
   @media (min-width: $breakpoint-small) {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     gap: 2rem;
   }
 }
 
 .logo {
-  width: 160px;
+  width: 185px;
   height: auto;
 }
 
