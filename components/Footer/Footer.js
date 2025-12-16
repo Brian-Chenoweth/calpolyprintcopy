@@ -30,11 +30,6 @@ export default function Footer({
           <div className={cx('container', styles.footerWrap)}>
             <div className={cx('footer-nav-contact-info')}>
 
-              <div className={cx('about')}>
-                <h3>Quick Links</h3>
-                <NavigationMenu className={cx('quick')} menuItems={aboutMenuItems} />
-              </div>
-
               <div className={cx('resources')}>
                 <h3>Cal Poly Print &amp; Copy</h3>
                 <NavigationMenu className={cx('quick')} menuItems={resourcesMenuItems} />
