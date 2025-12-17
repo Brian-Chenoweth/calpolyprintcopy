@@ -6,9 +6,9 @@
 }
 
 .image {
-  position: relative;
+  // position: relative;
   display: block;
-  min-height: 315px;
+  // min-height: 315px;
 
   figure {
      margin: 0;
@@ -24,7 +24,7 @@
 }
 
 .overlay {
-  position: absolute;
+  // position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
@@ -33,6 +33,11 @@
   background-color: rgba(0,0,0,0.3);
   @media screen and (max-width: 767px) {
     bottom: 10px;
+  }
+  &.backpage-bg {
+    background: linear-gradient(41deg, #002b33 8%, #035642 100%);
+    padding: 5rem 0;
+    margin-top: 8.5rem;
   }
 }
 
@@ -45,8 +50,8 @@
 .heading-home {
   position: static;
   margin: 0;
-  text-align: left;
-  letter-spacing: 2px;
+  text-align: center;
+  // letter-spacing: 2px;
   text-transform: uppercase;
   pointer-events: auto;
 }
@@ -67,27 +72,27 @@
   margin: 0;
   line-height: 1.05;
   text-transform: uppercase;
-  text-align: left;
+  // text-align: left;
   width: 100%;
   
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -25px; 
-    width: 200px; 
-    height: 3px;  
-    background: #C69214;  
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //   top: -25px; 
+  //   width: 200px; 
+  //   height: 3px;  
+  //   background: #C69214;  
+  // }
 
   
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -25px;   
-    width: 200px;  
-    height: 3px;
-    background: #C69214;
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //   bottom: -25px;   
+  //   width: 200px;  
+  //   height: 3px;
+  //   background: #C69214;
+  // }
 }

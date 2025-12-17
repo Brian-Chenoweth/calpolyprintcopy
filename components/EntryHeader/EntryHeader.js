@@ -14,31 +14,30 @@ export default function EntryHeader({ title, image, date, author, className }) {
 
   return (
     <div className={cx(['entry-header', className])}>
-      {image && (
-        <div className={cx('image')}>
+      <div className={cx('image')}>
+        <div
+          className={cx({
+          overlay: true,
+          'backpage-bg': hasText && !!title,
+          })}
+        >
+          <div className="container">
+            {hasText && !!title && (
+              <Heading className={cx('heading-home')}>{title}</Heading>
+            )}
 
-
-            <div className={cx('overlay')}>
-              <div className="container">
-
-                {hasText && (
-                  <>
-                    {!!title && <Heading className={cx('heading-home')}>{title}</Heading>}
-                  </>
-                )}
-
-                {isHome && (
-                  <Heading className={cx('heading-home')} level="h1">Cal Poly Print &amp; Copy</Heading>
-                )}
-                                
-              </div>
-            </div>
-
-
-
-          <FeaturedImage className={cx('featured-image')} image={image} priority />
+            {isHome && (
+              <Heading className={cx('heading-home')} level="h1">
+                Cal Poly Print &amp; Copy
+              </Heading>
+            )}
+          </div>
         </div>
-      )}
+
+        {image && (
+          <FeaturedImage className={cx('featured-image')} image={image} priority />
+        )}
+      </div>
     </div>
   );
 }

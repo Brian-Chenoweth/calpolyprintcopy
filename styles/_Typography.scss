@@ -19,18 +19,19 @@ h6 {
 }
 
 h1 {
-  font-size: 8rem;
+  font-size: 6.9rem;
   text-transform: uppercase;
-  font-family: "abolition", sans-serif;
-  font-weight: 400;
+  // font-family: "abolition", sans-serif;
+  font-family: "Roboto Condensed", Helvetica, Arial, Lucida, sans-serif;
+  font-weight: 700;
   font-style: normal;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
-  @media (min-width: $breakpoint-small) {
-    font-size: 12rem;
-  }
-  @media screen and (max-width: 650px) {
-    font-size: 6rem;
-  }
+  // @media (min-width: $breakpoint-small) {
+  //   font-size: 12rem;
+  // }
+  // @media screen and (max-width: 650px) {
+  //   font-size: 6rem;
+  // }
 }
 
 h1.postTitle {
