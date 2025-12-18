@@ -21,7 +21,6 @@ export default function Footer({
   navOneMenuItems,
   navTwoMenuItems,
   resourcesMenuItems,
-  aboutMenuItems,
 }) {
   return (
     <>
