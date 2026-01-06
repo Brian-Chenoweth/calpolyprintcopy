@@ -630,15 +630,130 @@
     background-color: #fbfbfb;
     border-bottom: solid 1px #ebebeb;
   }
+  .available-color {
+    color: white;
+    display: block;
+    background-color: pink;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+
+    &.orange {
+      background-color: #f26d20;
+      color: #000;
+    }
+
+    &.blue {
+      background-color: #01b8c6;
+      color: #000;
+    }
+
+    &.lt-green {
+      background-color: #add036;
+      color: #000;
+    }
+
+    &.fuschia {
+      background-color: #ef4399;
+      color: #000;
+    }
+
+    &.yellow {
+      background-color: #fee800;
+      color: #000;
+    }
+
+    &.drk-green {
+      background-color: #3f953a;
+      color: #000;
+    }
+
+    &.gold {
+      background-color: #ffc010;
+      color: #000;
+    }
+
+    &.red {
+      background-color: #c71e23;
+    }
+
+    &.pastel-blue {
+      background-color: #a4d3dd;
+      color: #000;
+    }
+
+    &.canary {
+      background-color: #f9f385;
+      color: #000;
+    }
+
+    &.buff {
+      background-color: #e7d25d;
+      color: #000;
+    }
+
+    &.ivory {
+      background-color: #e7f3dd;
+      color: #000;
+    }
+
+    &.tan {
+      background-color: #d8c781;
+      color: #000;
+    }
+
+    &.green {
+      background-color: #acd7a1;
+      color: #000;
+    }
+
+    &.pink {
+      background-color: #fad1e3;
+      color: #000;
+    }
+
+    &.salmon {
+      background-color: #f79147;
+      color: #000;
+    }
+
+    &.lilac {
+      background-color: #b1c4e5;
+      color: #000;
+    }
+
+    &.pastel-gold {
+      background-color: #fbad17;
+      color: #000;
+    }
+
+    &.ice-blue {
+      background-color: #c3d1d4;
+      color: #000;
+    }
+
+    &.cream {
+      background-color: #e9e0b9;
+      color: #000;
+    }
+
+    &.rose {
+      background-color: #dfc8ce;
+      color: #000;
+    }
+
+    &.gray {
+      background-color: #c6c7c2;
+      color: #000;
+    }
+
+  }
+
 }
 
 
 .wp-block-details {
   background-color: #F8F8F7;
   padding:0;
-  // display: flex;
-  // align-items: center;
-  // flex-direction: column;
   margin: 2rem 0;
 
   summary {
