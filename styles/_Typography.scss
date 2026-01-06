@@ -11,7 +11,6 @@ h5,
 h6 {
   font-family: $font-family;
   font-weight: $font-weight-normal;
-  // letter-spacing: .2rem;
   margin-bottom: 2rem;
   margin-top: 0;
   -webkit-font-smoothing: antialiased;
@@ -21,17 +20,10 @@ h6 {
 h1 {
   font-size: 6.9rem;
   text-transform: uppercase;
-  // font-family: "abolition", sans-serif;
   font-family: "Roboto Condensed", Helvetica, Arial, Lucida, sans-serif;
   font-weight: 700;
   font-style: normal;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
-  // @media (min-width: $breakpoint-small) {
-  //   font-size: 12rem;
-  // }
-  // @media screen and (max-width: 650px) {
-  //   font-size: 6rem;
-  // }
 }
 
 h1.postTitle {
@@ -43,15 +35,18 @@ h1.postTitle {
 }
 
 h2 {
-  font-size: 5rem;
+  font-size: 3.25rem !important;
   line-height: 5.5rem;
   color: var(--color-primary);
-  margin: 0 0 2.25rem 0;
-  letter-spacing: .24rem;
-  text-transform: uppercase;
+  margin: 0 0 2.25rem 0 !important;
+  // letter-spacing: .24rem;
+  // text-transform: titlecase;
   font-family: "abolition", sans-serif;
-  font-weight: 400;
+  font-family: "Roboto Condensed", Helvetica, Arial, Lucida, sans-serif;
+  font-weight: 700;
   font-style: normal;
+  text-align: center;
+
   @media (min-width: $breakpoint-small) {
     font-size: 6rem;
     line-height: 6.5rem;
@@ -118,4 +113,16 @@ a {
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+}
+
+.wp-block-columns {
+      margin: 10rem 0 !important;
+      gap: 25px;
+}
+
+p.intro {
+  font-size: 2.5rem;
+  font-family: "Karla", Helvetica, Arial, Lucida, sans-serif;
+  letter-spacing: normal;
+  font-weight: 300;
 }

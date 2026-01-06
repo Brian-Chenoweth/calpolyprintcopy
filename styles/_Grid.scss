@@ -583,9 +583,15 @@
   }
 }
 
+.wp-block-table {
+  margin:0 !important
+}
 
 .wp-block-table table {
-  text-align: center;
+  text-align: left;
+  color: #4d4f53;
+  font-family: "Karla", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 1.8rem;
   table {
     margin: 0;
   }
@@ -595,22 +601,34 @@
   td {
     border: none;
     // border-bottom: 10px solid white;
-    padding: 2rem;
+    padding: 1rem 2rem;
     margin: 0;
   }
   td, th {
     // border: 10px solid white;
   }
   th {
-    color: white;
-    background: rgba(3, 82, 63, 1);
-    text-align: center;
+    color: #a9975d;
+    text-transform: uppercase;
+    font-size: 2rem;
+    // background: rgba(3, 82, 63, 1);
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #a9975d;
+    background: #fff;
+    text-align: left;
+    padding: 1em;
+    font-weight: 600;
   }
   tr:nth-child(odd) {
-    background-color: #f0f0f0;
+    background-color: #fff;
+    border-bottom: solid 1px #ebebeb;
   }
   tr:nth-child(even) {
-    background-color: rgba(234,237,238,1);
+    // background-color: #fff;
+    background-color: #fbfbfb;
+    border-bottom: solid 1px #ebebeb;
   }
 }
 
