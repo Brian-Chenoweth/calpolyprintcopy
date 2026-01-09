@@ -30,7 +30,7 @@ export default function Footer({
             <div className={cx('footer-nav-contact-info')}>
 
               <div className={cx('resources')}>
-                <h3>Cal Poly Print &amp; Copy</h3>
+                <h3>Connect With Print &amp; Copy</h3>
                 <NavigationMenu className={cx('quick')} menuItems={resourcesMenuItems} />
               </div>
               
@@ -41,43 +41,49 @@ export default function Footer({
 
               <div className={cx('contact-info')}>
                 {/* modern Link */}
-                <Link href="/" className={cx('cppText')}>
+                {/* <Link href="/" className={cx('cppText')}>
                   {title ?? 'Cal Poly Print & Copy'}
+                </Link> */}
+
+              <div className={cx('logo')}>
+                {/* modern Link wrapping Image */}
+                <Link href="/" title="Home" target='_blank' rel='noopener noreferrer'>
+                  <Image
+                    src="/logo-white.png"
+                    width={150}
+                    height={38}
+                    alt="Cal Poly University logo"
+                    // layout="responsive"
+                  />
                 </Link>
+              </div>
+                <p>Robert E. Kennedy Library</p>
+                <p>1 Grand Ave., Building 15</p>
+                <p>San Luis Obispo, CA 93407</p>
 
-                <a
-                  href="https://maps.app.goo.gl/wfAGSv2u8VPyjxgR6"
-                  target="_blank"
-                  rel="noreferrer"
-                  className={cx('phone')}
-                >
-                  200 Maritime Academy Dr., Vallejo, CA 94590
-                </a>
-
-                <a href="tel:7076541000" className={cx('phone')}>
-                  707-654-1000
+                <a href="tel:8057562399" className={cx('phone')}>
+                  805-756-2399
                 </a>
               </div>
             </div>
 
             <div className={cx('logo-address')}>
-              <div className={cx('logo')}>
-                {/* modern Link wrapping Image */}
+              {/* <div className={cx('logo')}>
                 <Link href="https://www.calpoly.edu/" title="Home" target='_blank' rel='noopener noreferrer'>
                   <Image
-                    src="/logo.png"
+                    src="/logo-white.png"
                     width={400}
                     height={80}
                     alt="Cal Poly University logo"
                     layout="responsive"
                   />
                 </Link>
-              </div>
+              </div> */}
 
-              <p>1 Grand Avenue, San Luis Obispo, CA 93407</p>
-              <a href="tel:8057561111" className={cx('phone')}>(805) 756-1111</a>
+              {/* <p>1 Grand Avenue, San Luis Obispo, CA 93407</p> */}
+              {/* <a href="tel:8057561111" className={cx('phone')}>(805) 756-1111</a> */}
 
-              {appConfig?.socialLinks && (
+              {/* {appConfig?.socialLinks && (
                 <div className={cx('social-links')}>
                   <ul aria-label="Social media">
                     {appConfig.socialLinks?.instagramUrl && (
@@ -120,7 +126,7 @@ export default function Footer({
                     )}
                   </ul>
                 </div>
-              )}
+              )} */}
             </div>
 
             <div className={cx('nav-one')}>
