@@ -1,13 +1,7 @@
 // Footer.js
 import classNames from 'classnames/bind';
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-} from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
-import appConfig from 'app.config.js';
 
 import { NavigationMenu } from '../';
 
@@ -16,7 +10,6 @@ const cx = classNames.bind(styles);
 
 export default function Footer({
   siteTitle,
-  title,
   menuItems,
   navOneMenuItems,
   navTwoMenuItems,
@@ -40,13 +33,8 @@ export default function Footer({
               </div>
 
               <div className={cx('contact-info')}>
-                {/* modern Link */}
-                {/* <Link href="/" className={cx('cppText')}>
-                  {title ?? 'Cal Poly Print & Copy'}
-                </Link> */}
 
               <div className={cx('logo')}>
-                {/* modern Link wrapping Image */}
                 <Link href="/" title="Home" target='_blank' rel='noopener noreferrer'>
                   <Image
                     src="/logo-white.png"
@@ -65,68 +53,6 @@ export default function Footer({
                   805-756-2399
                 </a>
               </div>
-            </div>
-
-            <div className={cx('logo-address')}>
-              {/* <div className={cx('logo')}>
-                <Link href="https://www.calpoly.edu/" title="Home" target='_blank' rel='noopener noreferrer'>
-                  <Image
-                    src="/logo-white.png"
-                    width={400}
-                    height={80}
-                    alt="Cal Poly University logo"
-                    layout="responsive"
-                  />
-                </Link>
-              </div> */}
-
-              {/* <p>1 Grand Avenue, San Luis Obispo, CA 93407</p> */}
-              {/* <a href="tel:8057561111" className={cx('phone')}>(805) 756-1111</a> */}
-
-              {/* {appConfig?.socialLinks && (
-                <div className={cx('social-links')}>
-                  <ul aria-label="Social media">
-                    {appConfig.socialLinks?.instagramUrl && (
-                      <li>
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={cx('social-icon-link')}
-                          href={appConfig.socialLinks.instagramUrl}
-                        >
-                          <FaInstagram title="Instagram" className={cx('social-icon')} />
-                        </a>
-                      </li>
-                    )}
-
-                    {appConfig.socialLinks?.twitterUrl && (
-                      <li>
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={cx('social-icon-link')}
-                          href={appConfig.socialLinks.twitterUrl}
-                        >
-                          <FaTwitter title="Twitter" className={cx('social-icon')} />
-                        </a>
-                      </li>
-                    )}
-
-                    {appConfig.socialLinks?.facebookUrl && (
-                      <li>
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={cx('social-icon-link')}
-                          href={appConfig.socialLinks.facebookUrl}
-                        >
-                          <FaFacebookF title="Facebook" className={cx('social-icon')} />
-                        </a>
-                      </li>
-                    )}
-                  </ul>
-                </div>
-              )} */}
             </div>
 
             <div className={cx('nav-one')}>
