@@ -2,19 +2,14 @@
 
 .footer {
   position: relative;
-  // background: linear-gradient(135deg, var(--color-primary) 15%, #26825f);
   background: #222;
-  padding: 8rem 0rem 5rem;
+  padding: 6rem 0 0 0;
   color: var(--color-white);
-  // max-width: 1200px;
-  @media screen and (max-width: 767px) {
-    padding: 5rem 0rem 5rem;
-  }
 
   p {
-      @media screen and (max-width: 767px) {
-    font-size: 1.5rem !important;
-  }
+    @media screen and (max-width: 767px) {
+      font-size: 1.5rem !important;
+    }
   }
 
    .footerWrap {
@@ -33,16 +28,14 @@
   }
 
   h3 {
-    // color: var(--color-lime);
     color: #999;
-    // font-family: abolition, sans-serif;
     font-family: "Roboto Condensed", Helvetica, Arial, Lucida, sans-serif;
     text-transform: uppercase;
     font-style: normal;
     font-weight: 600;
     letter-spacing: normal;
     font-size: 1.6rem;
-    margin-bottom: .8rem;
+    margin-bottom: 0;
     margin-top: 0 !important;
     @media screen and (max-width: 767px) {
       font-size: 2.2rem;
@@ -65,18 +58,14 @@
 
     .about, .resources, .footer-nav, .contact-info {
       li {
-        // margin-bottom: 1rem;
         @media screen and (max-width: 767px) {
-          // font-size: 1.4rem;
           line-height: 2.3rem;
           margin-bottom: 0;
         }
       }
       h3 {
-        // margin-bottom: 0;
         margin-top: 2rem;
         @media screen and (max-width: 767px) {
-          // margin-bottom: 1rem;
         }
       }
     }
@@ -85,15 +74,13 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: flex-start;
+      align-items: flex-end;
       color: #999;
       @media (min-width: $breakpoint-small) {
-          // align-items: flex-end;
       }
 
       .cppText {
         padding: 1.6rem 0 .75rem 0;
-        // border-top: 1px solid rgba(255, 255, 255, 0.5);
         font-family: "utopia-std-display", serif;
         font-weight: 500;
         font-size: 2.75rem;
@@ -124,7 +111,6 @@
         margin: .75rem 0;
         line-height: 1;
         font-size: 1.8rem;
-        // font-family: "utopia-std-display", serif;
         font-weight: 600;
         color: #999;
         @media screen and (max-width: 767px) {
@@ -140,7 +126,6 @@
   display: flex;
   margin-bottom: 0rem;
   @media screen and (max-width: 767px) {
-    // margin-bottom: 0rem;
   }
 
   ul {
@@ -182,7 +167,6 @@
 .nav-one, .nav-two, .logo-address, .copyright {
 
     @media (min-width: $breakpoint-small)  {
-      // max-width: 90%;
       margin-top: 4rem;
     }
 
@@ -214,7 +198,6 @@
   }
     @media screen and (max-width: 767px) {
       margin-top: 2rem;
-      // font-size: 1.4rem;
       line-height: 2.3rem;
       margin-bottom: 0;
       li {margin-bottom: 0 !important;}
@@ -247,14 +230,12 @@
     text-decoration: none;
     font-size: 2rem;
     @media screen and (max-width: 767px) {
-      // font-size: 1.5rem;
     }
   }
 
   img {
     max-width: 250px;
     height: auto;
-    // margin-right: 2rem;
   }
 }
 
@@ -281,7 +262,6 @@
     }
     flex-wrap: wrap;
     width: 100%;
-    // justify-content: space-between;
   }
 
   li {
@@ -311,13 +291,14 @@
 
 .quick ul {
   flex-direction: column;
-  line-height: 3.25rem;
+  line-height: 3rem;
 }
 
 .copyright {
+  padding: 1.5rem 0;
+  background-color: #000;
+  color: #73747D;
   margin-top: 3rem;
   @media (min-width: $breakpoint-small) { 
-      margin-left: 7.2rem;
   }
-  // font-size: 1.5rem;
 }

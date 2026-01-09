@@ -52,23 +52,18 @@ export default function Footer({
                 <a href="tel:8057562399" className={cx('phone')}>
                   805-756-2399
                 </a>
+                  <NavigationMenu className={cx('nav')} menuItems={navTwoMenuItems} />
               </div>
             </div>
 
-            <div className={cx('nav-one')}>
-              <NavigationMenu className={cx('nav')} menuItems={navOneMenuItems} />
-            </div>
-
-            <div className={cx('nav-two')}>
-              <NavigationMenu className={cx('nav')} menuItems={navTwoMenuItems} />
-            </div>
-
-            <div className={cx('copyright')}>
-              &copy; {new Date().getFullYear()} {siteTitle ?? 'California Polytechnic State University'}
-            </div>
           </div>
 
-          <div className={cx('footer-mountains')}></div>
+            <div className={cx('copyright')}>
+              <div className={cx('container', styles.footerWrap)}> 
+                &copy; {new Date().getFullYear()} {siteTitle ?? 'Cal Poly Print and Copy'} || Cal Poly Partners Home || Cal Poly Home
+              </div>
+            </div>
+
         </div>
       </footer>
     </>

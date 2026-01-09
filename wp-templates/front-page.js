@@ -60,24 +60,24 @@ export default function Component() {
         <EntryHeader image={mainBanner} />
         <div className="container">
           <section className="hero text-center">
-            <Heading className={styles.heading} level="h1">
+            {/* <Heading className={styles.heading} level="h1">
               Welcome to your Blueprint
-            </Heading>
-            <p className={styles.description}>
+            </Heading> */}
+            {/* <p className={styles.description}>
               Achieve unprecedented performance with modern frameworks and the
               world&apos;s #1 open source CMS in one powerful headless platform.{' '}
-            </p>
-            <div className={styles.actions}>
+            </p> */}
+            {/* <div className={styles.actions}>
               <Button styleType="secondary" href="/contact-us">
                 GET STARTED
               </Button>
               <Button styleType="primary" href="/about">
                 LEARN MORE
               </Button>
-            </div>
+            </div> */}
           </section>
 
-          <section className="cta">
+          {/* <section className="cta">
             <CTA
               Button={() => (
                 <Button href="/posts">
@@ -91,16 +91,16 @@ export default function Component() {
                 requirements.
               </span>
             </CTA>
-          </section>
+          </section> */}
 
-          <section className={styles.posts}>
+          {/* <section className={styles.posts}>
             <Heading className={styles.heading} level="h2">
               Latest Posts
             </Heading>
             <Posts posts={data?.posts?.nodes} id="posts-list" />
-          </section>
+          </section> */}
 
-          <section className="cta">
+          {/* <section className="cta">
             <CTA
               Button={() => (
                 <Button href="/posts">
@@ -114,7 +114,7 @@ export default function Component() {
                 requirements.
               </span>
             </CTA>
-          </section>
+          </section> */}
 
           <section className={styles.testimonials}>
             <Heading className={styles.heading} level="h2">
