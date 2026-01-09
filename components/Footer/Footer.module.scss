@@ -76,6 +76,7 @@
       justify-content: flex-start;
       align-items: flex-end;
       color: #999;
+      // p {font-size: 1.4rem;}
       @media (min-width: $breakpoint-small) {
       }
 
@@ -105,12 +106,13 @@
       }
       p {
         margin: 0;
-        
+        font-size: 1.4rem;
+        line-height: 2.5rem;
       }
       .phone {
-        margin: .75rem 0;
+        margin: 2rem 0 0 0 ;
         line-height: 1;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         font-weight: 600;
         color: #999;
         @media screen and (max-width: 767px) {
@@ -251,14 +253,15 @@
 
 
   ul {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
+    // align-items: flex;
     list-style: none;
     padding: 0;
     margin: 0;
 
     @media (min-width: $breakpoint-small) {
-      flex-direction: row;
+      // flex-direction: row;
     }
     flex-wrap: wrap;
     width: 100%;
@@ -269,7 +272,7 @@
     margin-bottom: 1rem;
 
     @media (min-width: $breakpoint-small) {
-      margin-right: 2rem;
+      // margin-right: 2rem;
       margin-bottom: 0;
     }
 
@@ -287,18 +290,27 @@
       }
     }
   }
+  &.logoNav {
+    margin: 2rem 0 4rem 0;
+  }
 }
 
 .quick ul {
   flex-direction: column;
-  line-height: 3rem;
+  line-height: 2.75rem;
 }
 
 .copyright {
   padding: 1.5rem 0;
   background-color: #000;
   color: #73747D;
+  font-weight: 400;
   margin-top: 3rem;
   @media (min-width: $breakpoint-small) { 
+  }
+  a {
+    font-weight: 400;
+    color: #73747D;
+    text-decoration: none;
   }
 }
