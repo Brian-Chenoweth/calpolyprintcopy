@@ -36,21 +36,21 @@ h1.postTitle {
 
 h2 {
   font-size: 3.25rem !important;
-  line-height: 5.5rem;
+  line-height: 3.75rem;
   color: var(--color-primary);
   margin: 0 0 2.25rem 0 !important;
   // letter-spacing: .24rem;
-  // text-transform: titlecase;
+  text-transform: uppercase;
   font-family: "abolition", sans-serif;
   font-family: "Roboto Condensed", Helvetica, Arial, Lucida, sans-serif;
   font-weight: 700;
   font-style: normal;
-  text-align: center;
+  // text-align: center;
 
-  @media (min-width: $breakpoint-small) {
-    font-size: 6rem;
-    line-height: 6.5rem;
-  }
+  // @media (min-width: $breakpoint-small) {
+  //   font-size: 6rem;
+  //   line-height: 6.5rem;
+  // }
 }
 
 h3 {
