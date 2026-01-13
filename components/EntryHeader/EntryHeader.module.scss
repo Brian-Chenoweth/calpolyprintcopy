@@ -2,42 +2,67 @@
 
 .entry-header {
   color: var(--color-white);
-  margin-top: 50px;
+  margin-top: 85px;
 }
 
 .image {
-  // position: relative;
+  position: relative; // needed so absolute overlay + divider anchor correctly
   display: block;
-  // min-height: 315px;
+  overflow: hidden;   // keeps SVG divider clipped inside the hero
 
   figure {
-     margin: 0;
-     min-height: 315px;
-     object-fit: cover; 
-    }
-
-  figure img { 
+    margin: 0;
     min-height: 315px;
-    object-fit: cover; 
+    object-fit: cover;
   }
 
+  figure img {
+    min-height: 315px;
+    object-fit: cover;
+  }
+
+  // ✅ Divi-style SVG bottom divider (single source of truth)
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px; // prevents hairline gap
+
+    height: 140px; // MUST match the SVG viewBox height
+    z-index: 20;    // above image, below overlay text
+    pointer-events: none;
+
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxNDBweCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik0wIDE0MGw2NDAtNzAgNjQwIDcwVjBMNjQwIDcwIDAgMHYxNDB6IiBmaWxsLW9wYWNpdHk9Ii41Ii8+PHBhdGggZD0iTTAgMTQwaDEyODBMNjQwIDcwIDAgMTQweiIvPjwvZz48L3N2Zz4=");
+
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 100% 140px; // do NOT use 100% 100% (it distorts the curve)
+  }
 }
 
 .overlay {
-  // position: absolute;
+  position: absolute; // overlay sits on top of featured image
   inset: 0;
-  z-index: 2;
+  z-index: 3; // ✅ above divider
   pointer-events: none;
-  display: flex; 
+  display: flex;
   align-items: center;
-  background-color: rgba(0,0,0,0.3);
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+
   @media screen and (max-width: 767px) {
-    bottom: 10px;
+    bottom: 0;
   }
+
+  // ONLY applied when NO featured image
   &.backpage-bg {
+    position: relative;
+    inset: auto;
     background: linear-gradient(41deg, #002b33 8%, #035642 100%);
     padding: 5rem 0;
-    margin-top: 8.5rem;
+    margin-top: 0;
   }
 }
 
@@ -45,26 +70,35 @@
   width: 100%;
   display: flex;
   align-items: center;
-}
-
-.heading-home {
-  position: static;
-  margin: 0;
-  text-align: center;
-  // letter-spacing: 2px;
-  text-transform: uppercase;
-  pointer-events: auto;
+  justify-content: center;
 }
 
 .text,
-.image { margin: auto; text-align: center; }
-.text { width: 100%; }
-.title { line-height: 1em; font-weight: 700; }
-.byline { font-weight: $font-weight-bold; font-size: 1.2rem; text-transform: uppercase; }
+.image {
+  margin: auto;
+  text-align: center;
+}
 
+.text {
+  width: 100%;
+}
 
-.featured-image { margin: 0; position: relative; z-index: 1; }
+.title {
+  line-height: 1em;
+  font-weight: 700;
+}
 
+.byline {
+  font-weight: $font-weight-bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.featured-image {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
 
 .heading-home {
   position: relative;
@@ -72,27 +106,49 @@
   margin: 0;
   line-height: 1.05;
   text-transform: uppercase;
-  // text-align: left;
   width: 100%;
-  
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   left: 0;
-  //   top: -25px; 
-  //   width: 200px; 
-  //   height: 3px;  
-  //   background: #C69214;  
-  // }
+  text-align: center;
+  pointer-events: auto;
+}
 
-  
-  // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   left: 0;
-  //   bottom: -25px;   
-  //   width: 200px;  
-  //   height: 3px;
-  //   background: #C69214;
-  // }
+
+.image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  figure {
+    margin: 0;
+    min-height: 315px;
+    object-fit: cover;
+  }
+
+  figure img {
+    min-height: 315px;
+    object-fit: cover;
+  }
+
+  // ✅ default: divider OFF
+  &::after {
+    content: none;
+  }
+
+  // ✅ divider ON only when WP featured image exists
+  &.has-featured-image::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+
+    height: 140px;
+    z-index: 20;
+    pointer-events: none;
+
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxNDBweCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik0wIDE0MGw2NDAtNzAgNjQwIDcwVjBMNjQwIDcwIDAgMHYxNDB6IiBmaWxsLW9wYWNpdHk9Ii41Ii8+PHBhdGggZD0iTTAgMTQwaDEyODBMNjQwIDcwIDAgMTQweiIvPjwvZz48L3N2Zz4=");
+
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 100% 140px;
+  }
 }

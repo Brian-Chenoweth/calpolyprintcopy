@@ -12,13 +12,18 @@ export default function EntryHeader({ title, image, date, author, className }) {
   const { pathname } = useRouter();
   const isHome = pathname === '/';
 
+  const hasFeaturedImage = !!image?.sourceUrl;
+  const useBackpageBar = !isHome && !!title && !hasFeaturedImage;
+  const useImageOverlay = !isHome && !!title && hasFeaturedImage;
+
   return (
     <div className={cx(['entry-header', className])}>
-      <div className={cx('image')}>
+      <div className={cx('image', { 'has-featured-image': hasFeaturedImage })}>
         <div
           className={cx({
-          overlay: true,
-          'backpage-bg': hasText && !!title,
+            overlay: true,
+            'backpage-bg': useBackpageBar,
+            'overlay-on-image': useImageOverlay,
           })}
         >
           <div className="container">
@@ -34,7 +39,7 @@ export default function EntryHeader({ title, image, date, author, className }) {
           </div>
         </div>
 
-        {image && (
+        {hasFeaturedImage && (
           <FeaturedImage className={cx('featured-image')} image={image} priority />
         )}
       </div>
