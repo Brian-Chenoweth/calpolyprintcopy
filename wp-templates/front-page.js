@@ -58,18 +58,15 @@ export default function Component() {
 
       <Main className={styles.home}>
         <EntryHeader image={mainBanner} />
-        <div className="container">
 
           <section className={styles.testimonials}>
-            <Heading className={styles.heading} level="h2">
-              Testimonials
-            </Heading>
-            <p className={styles.description}>
-              Here are just a few of the nice things our customers have to say.
-            </p>
-            <Testimonials testimonials={data?.testimonials?.nodes} />
+            <div className="container">
+              <div className={styles.testimonial}>
+                <Testimonials testimonials={data?.testimonials?.nodes} />
+              </div>
+            </div>
           </section>
-        </div>
+
       </Main>
 
       <Footer

@@ -35,9 +35,22 @@
 }
 
 .testimonials {
-  text-align: center;
+  // text-align: left !important;
+  // margin: 10rem 0;
+  background-color: pink;
+  background-image: url("/static/cal-poly-campus-mustang-way-students-biking-walking.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 15rem 0;
+  // color: white;
 
   .description {
     margin-bottom: 6rem;
   }
+}
+
+.testimonial {
+  padding: 5rem;
+  background-color: white;
+  p {text-align: left !important;}
 }
