@@ -1,42 +1,30 @@
 import { gql } from '@apollo/client';
 import { FaQuoteRight } from 'react-icons/fa';
-import className from 'classnames/bind';
+import classNames from 'classnames/bind';
+import { useEffect, useState } from 'react';
 
 import TestimonialItem from '../TestimonialItem';
-
 import styles from './Testimonials.module.scss';
-const cx = className.bind(styles);
+
+const cx = classNames.bind(styles);
 
 /**
- * Create a deterministic index so SSR + client match
- */
-function getStableIndex(testimonials) {
-  if (!testimonials.length) return 0;
-
-  const str = testimonials
-    .map(
-      (t) =>
-        `${t?.testimonialFields?.testimonialAuthor || ''}|${
-          t?.testimonialFields?.testimonialContent || ''
-        }`
-    )
-    .join('||');
-
-  let hash = 0;
-  for (let i = 0; i < str.length; i += 1) {
-    hash = (hash * 31 + str.charCodeAt(i)) | 0;
-  }
-
-  return Math.abs(hash) % testimonials.length;
-}
-
-/**
- * Render a single deterministic “random” testimonial
+ * Render a single RANDOM testimonial (SSR-safe)
  */
 export default function Testimonials({ testimonials = [] }) {
   if (!testimonials.length) return null;
 
-  const index = getStableIndex(testimonials);
+  // Start stable for SSR
+  const [index, setIndex] = useState(0);
+
+  // Randomize on client after mount
+  useEffect(() => {
+    if (testimonials.length > 1) {
+      const randomIndex = Math.floor(Math.random() * testimonials.length);
+      setIndex(randomIndex);
+    }
+  }, [testimonials.length]);
+
   const testimonial = testimonials[index];
 
   return (

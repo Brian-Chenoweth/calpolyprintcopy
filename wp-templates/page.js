@@ -13,6 +13,7 @@ import {
   NavigationMenu,
   FeaturedImage,
   SEO,
+  Testimonials,
 } from '../components';
 
 import dynamic from 'next/dynamic';
@@ -29,10 +30,13 @@ const SLOT_HTML = '<div id="contact-form-slot"></div>';
 // Portals the ContactForm into the placeholder div after mount.
 function ContactFormIntoSlot() {
   const [slot, setSlot] = useState(null);
+
   useEffect(() => {
     setSlot(document.getElementById('contact-form-slot'));
   }, []);
+
   if (!slot) return null;
+
   return createPortal(<ContactForm />, slot);
 }
 
@@ -46,13 +50,19 @@ export default function Component(props) {
 
   const { title: siteTitle, description: siteDescription } =
     props?.data?.generalSettings;
+
   const primaryMenu = props?.data?.headerMenuItems?.nodes ?? [];
-  const footerMenu = props?.data?.footerMenuItems?.nodes ?? [];
-  const quickLinks   = props?.data?.quickFooterMenuItems?.nodes ?? [];
-  const aboutLinks   = props?.data?.aboutFooterMenuItems?.nodes ?? [];
-  const navOne       = props?.data?.footerSecondaryMenuItems?.nodes ?? [];
-  const navTwo       = props?.data?.footerTertiaryMenuItems?.nodes ?? [];
-  const resources    = props?.data?.resourcesFooterMenuItems?.nodes ?? [];
+
+  // Footer menus
+  const footerMenu  = props?.data?.footerMenuItems?.nodes ?? [];
+  const quickLinks  = props?.data?.quickFooterMenuItems?.nodes ?? [];
+  const aboutLinks  = props?.data?.aboutFooterMenuItems?.nodes ?? [];
+  const navOne      = props?.data?.footerSecondaryMenuItems?.nodes ?? [];
+  const navTwo      = props?.data?.footerTertiaryMenuItems?.nodes ?? [];
+  const resources   = props?.data?.resourcesFooterMenuItems?.nodes ?? [];
+
+  // Testimonials (for Footer)
+  const testimonials = props?.data?.testimonials?.nodes ?? [];
 
   const page = props?.data?.page ?? { title: '' };
   const { title, content, featuredImage, seo: s } = page;
@@ -62,7 +72,11 @@ export default function Component(props) {
   // ---- Yoast → SEO props with smart fallbacks ----
   const computedTitle =
     s?.title ||
-    pageTitle(props?.data?.generalSettings, title, props?.data?.generalSettings?.title);
+    pageTitle(
+      props?.data?.generalSettings,
+      title,
+      props?.data?.generalSettings?.title
+    );
 
   const computedDescription =
     s?.metaDesc || siteDescription || 'Official site for Cal Poly Partners.';
@@ -76,8 +90,6 @@ export default function Component(props) {
   const computedCanonical =
     s?.canonical ||
     (baseUrl && router?.asPath ? `${baseUrl}${router.asPath}` : undefined);
-
-
 
   const ogType = s?.opengraphType || 'website';
   const ogSiteName = s?.opengraphSiteName || siteTitle;
@@ -98,24 +110,26 @@ export default function Component(props) {
         description={siteDescription}
         menuItems={primaryMenu}
       />
+
       <Main>
-        <>
-          <EntryHeader title={title} image={featuredImage?.node} />
-          <div className="container">
-            <ContentWrapper content={htmlWithSlot} />
-            <ContactFormIntoSlot />
-          </div>
-        </>
+        <EntryHeader title={title} image={featuredImage?.node} />
+
+        <div className="container">
+          <ContentWrapper content={htmlWithSlot} />
+          <ContactFormIntoSlot />
+        </div>
       </Main>
-        <Footer
-          title={siteTitle}
-          menuItems={footerMenu}                 // if you still want a base/footer menu
-          quickLinksMenuItems={quickLinks}       // rename if your Footer expects this name
-          navOneMenuItems={navOne}
-          navTwoMenuItems={navTwo}
-          resourcesMenuItems={resources}
-          aboutMenuItems={aboutLinks}
-        />
+
+      <Footer
+        siteTitle={siteTitle}
+        menuItems={footerMenu}
+        quickLinksMenuItems={quickLinks}
+        navOneMenuItems={navOne}
+        navTwoMenuItems={navTwo}
+        resourcesMenuItems={resources}
+        aboutMenuItems={aboutLinks}
+        testimonials={testimonials}
+      />
     </>
   );
 }
@@ -125,11 +139,11 @@ const safeEnum = (v) => (typeof v === 'string' && v.length ? v : null);
 Component.variables = ({ databaseId }, ctx) => {
   const header = safeEnum(MENUS.PRIMARY_LOCATION);
   const footer = safeEnum(MENUS.FOOTER_LOCATION);
-  const quick  = safeEnum(MENUS.QUICK_FOOTER_LOCATION);
-  const about  = safeEnum(MENUS.ABOUT_FOOTER_LOCATION);
-  const sec    = safeEnum(MENUS.FOOTER_SECONDARY_LOCATION);
-  const tert   = safeEnum(MENUS.FOOTER_TERTIARY_LOCATION);
-  const res    = safeEnum(MENUS.RESOURCES_FOOTER_LOCATION);
+  const quick = safeEnum(MENUS.QUICK_FOOTER_LOCATION);
+  const about = safeEnum(MENUS.ABOUT_FOOTER_LOCATION);
+  const sec = safeEnum(MENUS.FOOTER_SECONDARY_LOCATION);
+  const tert = safeEnum(MENUS.FOOTER_TERTIARY_LOCATION);
+  const res = safeEnum(MENUS.RESOURCES_FOOTER_LOCATION);
 
   return {
     databaseId,
@@ -154,32 +168,31 @@ Component.variables = ({ databaseId }, ctx) => {
   };
 };
 
-
-
 Component.query = gql`
   ${BlogInfoFragment}
   ${NavigationMenu.fragments.entry}
   ${FeaturedImage.fragments.entry}
+  ${Testimonials.fragments.entry}
 
   query GetPageData(
-  $databaseId: ID!
-  $headerLocation: MenuLocationEnum
-  $footerLocation: MenuLocationEnum
-  $quickFooterLocation: MenuLocationEnum
-  $aboutFooterLocation: MenuLocationEnum
-  $footerSecondaryLocation: MenuLocationEnum
-  $footerTertiaryLocation: MenuLocationEnum
-  $resourcesFooterLocation: MenuLocationEnum
+    $databaseId: ID!
+    $headerLocation: MenuLocationEnum
+    $footerLocation: MenuLocationEnum
+    $quickFooterLocation: MenuLocationEnum
+    $aboutFooterLocation: MenuLocationEnum
+    $footerSecondaryLocation: MenuLocationEnum
+    $footerTertiaryLocation: MenuLocationEnum
+    $resourcesFooterLocation: MenuLocationEnum
 
-  $hasHeaderMenu: Boolean! = false
-  $hasFooterMenu: Boolean! = false
-  $hasQuickFooterMenu: Boolean! = false
-  $hasAboutFooterMenu: Boolean! = false
-  $hasFooterSecondaryMenu: Boolean! = false
-  $hasFooterTertiaryMenu: Boolean! = false
-  $hasResourcesFooterMenu: Boolean! = false
+    $hasHeaderMenu: Boolean! = false
+    $hasFooterMenu: Boolean! = false
+    $hasQuickFooterMenu: Boolean! = false
+    $hasAboutFooterMenu: Boolean! = false
+    $hasFooterSecondaryMenu: Boolean! = false
+    $hasFooterTertiaryMenu: Boolean! = false
+    $hasResourcesFooterMenu: Boolean! = false
 
-  $asPreview: Boolean = false
+    $asPreview: Boolean = false
   ) {
     page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
       title
@@ -199,19 +212,29 @@ Component.query = gql`
       }
     }
 
+    testimonials {
+      nodes {
+        ...TestimonialsFragment
+      }
+    }
+
     generalSettings {
       ...BlogInfoFragment
     }
 
-      headerMenuItems: menuItems(where: { location: $headerLocation }, first: 100)
-        @include(if: $hasHeaderMenu) {
-        nodes { ...NavigationMenuItemFragment }
+    headerMenuItems: menuItems(where: { location: $headerLocation }, first: 100)
+      @include(if: $hasHeaderMenu) {
+      nodes {
+        ...NavigationMenuItemFragment
       }
+    }
 
-      footerMenuItems: menuItems(where: { location: $footerLocation }, first: 100)
-        @include(if: $hasFooterMenu) {
-        nodes { ...NavigationMenuItemFragment }
+    footerMenuItems: menuItems(where: { location: $footerLocation }, first: 100)
+      @include(if: $hasFooterMenu) {
+      nodes {
+        ...NavigationMenuItemFragment
       }
+    }
 
     quickFooterMenuItems: menuItems(where: { location: $quickFooterLocation }, first: 100)
       @include(if: $hasQuickFooterMenu) {

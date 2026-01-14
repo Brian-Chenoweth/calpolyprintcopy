@@ -58,15 +58,6 @@ export default function Component() {
 
       <Main className={styles.home}>
         <EntryHeader image={mainBanner} />
-
-          <section className={styles.testimonials}>
-            <div className="container">
-              <div className={styles.testimonial}>
-                <Testimonials testimonials={data?.testimonials?.nodes} />
-              </div>
-            </div>
-          </section>
-
       </Main>
 
       <Footer
@@ -77,6 +68,7 @@ export default function Component() {
         navTwoMenuItems={navTwo}
         resourcesMenuItems={resources}
         aboutMenuItems={aboutLinks}
+        testimonials={data?.testimonials?.nodes}
       />
     </>
   );
