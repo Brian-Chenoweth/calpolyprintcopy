@@ -1,7 +1,8 @@
 .container {
   text-align: center;
+  display: flex;
+  align-items: center;
 
-  // Used to override react-responsive-carousel styles
   :global {
     .carousel.carousel-slider {
       display: flex;
@@ -22,11 +23,39 @@
 }
 
 .quote-icon {
-  font-size: 3rem;
-  margin-bottom: 2rem;
+  background-color: #a9975d;
+  font-size: 4rem;
+  font-weight: 100;
+  margin-bottom: 0;
+  svg, path {
+    fill: white;
+  }
+}
+
+
+.quoteIconWrap {
+  width: 150px;    
+  height: 150px;
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+  padding: 2rem;
+  margin-right: 5%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #a9975d;
+  border-radius: 50%;
 }
 
 .slide-content {
+  color: #4d4f53;
+  // line-height: 1.45;
+
+  p {
+    line-height: 1.4;
+  }
   p:only-child {
     margin-bottom: 0;
   }

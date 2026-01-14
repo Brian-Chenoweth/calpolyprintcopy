@@ -16,7 +16,7 @@ export default function TestimonialItem({ author, children }) {
     <div className={cx('container')}>
       <div className={cx('content')}>{children}</div>
 
-      {author && <div className={cx('author')}>{author}</div>}
+      {author && <p className={cx('author')}>{author}</p>}
     </div>
   );
 }

@@ -8,18 +8,42 @@ import styles from './Testimonials.module.scss';
 const cx = className.bind(styles);
 
 /**
- * Render a single random testimonial
+ * Create a deterministic index so SSR + client match
+ */
+function getStableIndex(testimonials) {
+  if (!testimonials.length) return 0;
+
+  const str = testimonials
+    .map(
+      (t) =>
+        `${t?.testimonialFields?.testimonialAuthor || ''}|${
+          t?.testimonialFields?.testimonialContent || ''
+        }`
+    )
+    .join('||');
+
+  let hash = 0;
+  for (let i = 0; i < str.length; i += 1) {
+    hash = (hash * 31 + str.charCodeAt(i)) | 0;
+  }
+
+  return Math.abs(hash) % testimonials.length;
+}
+
+/**
+ * Render a single deterministic “random” testimonial
  */
 export default function Testimonials({ testimonials = [] }) {
   if (!testimonials.length) return null;
 
-  // ✅ Pick ONE random testimonial per render
-  const randomIndex = Math.floor(Math.random() * testimonials.length);
-  const testimonial = testimonials[randomIndex];
+  const index = getStableIndex(testimonials);
+  const testimonial = testimonials[index];
 
   return (
     <div className={cx('container')}>
-      <FaQuoteRight className={cx('quote-icon')} />
+      <span className={cx('quoteIconWrap')}>
+        <FaQuoteRight className={cx('quote-icon')} />
+      </span>
 
       <TestimonialItem
         author={testimonial?.testimonialFields?.testimonialAuthor}
