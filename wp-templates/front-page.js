@@ -9,6 +9,7 @@ import {
   Button,
   Heading,
   CTA,
+  HomepageWelcome,
   NavigationMenu,
   SEO,
   Header,
@@ -58,6 +59,9 @@ export default function Component() {
 
       <Main className={styles.home}>
         <EntryHeader image={mainBanner} />
+        <div className="container">
+          <HomepageWelcome />
+        </div>
       </Main>
 
       <Footer

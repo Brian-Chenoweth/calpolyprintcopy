@@ -7,7 +7,7 @@ import FeaturedImage from './FeaturedImage';
 import FormatDate from './FormatDate';
 import Heading from './Heading';
 import Header from './Header';
-import HomepageCampusLife from './HomepageCampusLife';
+import HomepageWelcome from './HomepageWelcome';
 import HomepageIntro from './HomepageIntro';
 import HomepageNonProfit from './HomepageNonProfit';
 import HomepageStudentNeeds from './HomepageStudentNeeds';
@@ -39,7 +39,7 @@ export {
   FormatDate,
   Heading,
   Header,
-  HomepageCampusLife,
+  HomepageWelcome,
   HomepageNonProfit,
   HomepageStudentNeeds,
   HomepageIntro,
