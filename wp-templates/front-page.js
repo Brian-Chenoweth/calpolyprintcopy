@@ -10,6 +10,7 @@ import {
   Heading,
   CTA,
   HomepageWelcome,
+  HomepageVideo,
   NavigationMenu,
   SEO,
   Header,
@@ -57,8 +58,10 @@ export default function Component() {
         menuItems={primaryMenu}
       />
 
+      <HomepageVideo />
+
       <Main className={styles.home}>
-        <EntryHeader image={mainBanner} />
+        {/* <EntryHeader image={mainBanner} /> */}
         <div className="container">
           <HomepageWelcome />
         </div>
