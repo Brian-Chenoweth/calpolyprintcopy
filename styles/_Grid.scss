@@ -548,23 +548,11 @@
 /* RIGHT: true vertical centering + controlled spacing */
 .homepage-dark-blue.dark-blue-image-left .wp-block-media-text__content {
   grid-column: 2 !important;
-  // background-color: pink;
   background: linear-gradient(35deg, #013e70 35%, #0067b9 80%);
-
-  /* center vertically with grid, keep left-aligned text */
-  // display: grid !important;
   align-content: center !important;
   justify-items: start !important;
-
-  /* site gutters; adjust as needed */
-  // padding-inline: 24px !important;
-  // padding-block: 0 !important;
-
-  /* critical to allow centering, prevents min-content overflow */
   min-height: 0 !important;
   overflow: hidden;
-
-  /* replace default element margins with a single gap */
   gap: 16px !important;
 }
 
@@ -633,7 +621,7 @@
   .available-color {
     color: white;
     display: block;
-    background-color: pink;
+    background-color: var(--color-primary);
     padding: 1rem 2rem;
     margin: 1rem 0;
 
@@ -764,9 +752,7 @@
     font-family: 'Source Sans Pro', Helvetica, Arial, Lucida, sans-serif;
     font-weight: 600;
     padding:0;
-    // width: 100%;
     list-style: none;
-    // background-color: pink;
     &::marker {
       display: none !important;
     }
