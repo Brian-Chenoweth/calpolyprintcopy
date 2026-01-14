@@ -5,9 +5,9 @@ import Link from 'next/link';
 
 import { NavigationMenu, Testimonials } from '../';
 
-import styles from './Footer.module.scss';
-
 import testimonialStyles from '../Testimonials/Testimonials.module.scss';
+
+import styles from './Footer.module.scss';
 
 const cx = classNames.bind(styles);
 const t = classNames.bind(testimonialStyles);
