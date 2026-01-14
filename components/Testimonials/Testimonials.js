@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-
 import { gql } from '@apollo/client';
 import { FaQuoteRight } from 'react-icons/fa';
 import classNames from 'classnames/bind';
 
 import TestimonialItem from '../TestimonialItem';
+
 import styles from './Testimonials.module.scss';
 
 const cx = classNames.bind(styles);
