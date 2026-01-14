@@ -88,7 +88,6 @@ p {
   }
 }
 
-// Links
 a {
   color: var(--color-black);
   text-decoration: none;
@@ -109,15 +108,12 @@ a {
 }
 
 .wp-block-columns {
-      // margin: 10rem 0 !important;
-      gap: 25px;
+    gap: 25px;
 }
 
 p.intro {
   color: #4d4f53;
   font-size: 2.5rem;
-  // font-family: "Karla", Helvetica, Arial, Lucida, sans-serif;
-  // letter-spacing: .01px;
   font-weight: 500;
   text-align: center;
   margin-bottom: 10rem;
@@ -125,7 +121,6 @@ p.intro {
 }
 
 h2.intro {
-  // color: pink !important;
   text-align: center;
   font-size: 5rem !important;
   padding-bottom: 2rem;
@@ -135,7 +130,6 @@ h2.intro {
 .wp-block-media-text {
   margin: 5rem 0;
   p {
-    // font-size: 1.8rem;
     margin: 0 0 3rem 0;
     color: #4d4f53;
     font-weight: 500;
@@ -152,7 +146,6 @@ h2.intro {
     padding-right: 0 !important;
   }
 
-  /* Media then content (content is RIGHT) */
   &:has(> .wp-block-media-text__media + .wp-block-media-text__content) {
     .wp-block-media-text__content {
       padding-left: 3rem !important;
@@ -160,7 +153,6 @@ h2.intro {
     }
   }
 
-  /* Content then media (content is LEFT) */
   &:has(> .wp-block-media-text__content + .wp-block-media-text__media) {
     .wp-block-media-text__content {
       padding-left: 0 !important;

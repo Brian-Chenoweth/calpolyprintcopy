@@ -52,7 +52,6 @@
 
 .slide-content {
   color: #4d4f53;
-  // line-height: 1.45;
 
   p {
     line-height: 1.4;
@@ -65,14 +64,11 @@
 
 
 .testimonials {
-  // text-align: left !important;
-  // margin: 10rem 0;
   background-color: var(--color-primary);
   background-image: url("/static/cal-poly-campus-mustang-way-students-biking-walking.jpg");
   background-size: cover;
   background-position: center;
   padding: 15rem 0;
-  // color: white;
 
   .description {
     margin-bottom: 6rem;
@@ -81,7 +77,6 @@
 
 .testimonial {
     max-width: 75%;
-  // width: 75%;
   margin: 0 auto;
   padding: 5rem;
   background-color: white;
