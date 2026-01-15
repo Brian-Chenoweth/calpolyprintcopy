@@ -996,7 +996,7 @@ details[open] > summary::before {
 }
 
 h2.intro-text {
-  margin: 0 !important;
+  // margin: 0 !important;
 }
 
 .num-wrap {
@@ -1285,4 +1285,12 @@ x
   margin: 0;
   font-style: italic;
   color: #a9975d;
+}
+
+
+
+.wp-block-column {
+   @media (min-width: $breakpoint-small) {
+        h3 {margin-top: 0;}
+  } 
 }
