@@ -39,7 +39,7 @@ h2 {
   line-height: 3.75rem;
   color: #035642;
   margin: 0 0 2.25rem 0 !important;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   font-family: "abolition", sans-serif;
   font-family: "Roboto Condensed", Helvetica, Arial, Lucida, sans-serif;
   font-weight: 700;
@@ -112,6 +112,7 @@ a {
 
 .wp-block-columns {
     gap: 25px;
+    margin: 0 0 5rem 0;
 }
 
 p.intro {
@@ -129,6 +130,7 @@ h2.intro {
   padding-bottom: 2rem;
   margin: 4rem 0 2rem 0 !important;
   border-bottom: solid 1px #a9975d;
+  text-transform: uppercase;
 }
 
 .wp-block-media-text {
