@@ -15,7 +15,7 @@
     transition: all .3s;
     // color: var(--color-primary) !important;
     font-weight: 700;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     text-decoration: underline;
     transition: all .3s;
   }
@@ -57,6 +57,10 @@
         color: var(--color-secondary);
         text-decoration: none;
       }
+    }
+
+    a.wp-element-button {
+      text-decoration: none;
     }
 
     li {
