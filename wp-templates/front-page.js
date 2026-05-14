@@ -6,7 +6,6 @@ import {
   Main,
   HomepageWelcome,
   HomepageVideo,
-  HomepageSurveyPopup,
   NavigationMenu,
   SEO,
   Header,
@@ -47,8 +46,6 @@ export default function Component() {
         description={siteDescription}
         menuItems={primaryMenu}
       />
-
-      <HomepageSurveyPopup />
 
       <HomepageVideo />
 

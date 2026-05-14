@@ -12,7 +12,6 @@ import {
   EntryHeader,
   NavigationMenu,
   FeaturedImage,
-  HomepageSurveyPopup,
   SEO,
   Testimonials,
 } from '../components';
@@ -67,8 +66,6 @@ export default function Component(props) {
 
   const page = props?.data?.page ?? { title: '' };
   const { title, content, featuredImage, seo: s } = page;
-  const shouldShowSurveyPopup =
-    page?.slug === 'submit-print-online' || page?.uri === '/submit-print-online/';
 
   const htmlWithSlot = (content ?? '').split(TOKEN).join(SLOT_HTML);
 
@@ -119,8 +116,6 @@ export default function Component(props) {
         description={siteDescription}
         menuItems={primaryMenu}
       />
-
-      {shouldShowSurveyPopup && <HomepageSurveyPopup />}
 
       <Main>
         <EntryHeader title={title} image={featuredImage?.node} />
