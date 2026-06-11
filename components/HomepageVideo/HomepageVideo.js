@@ -188,7 +188,7 @@ export default function HomepageVideo() {
           </div>
 
           <p>Hours of Operation</p>
-          <p>Monday - Friday 9:00 am - 1:00 pm</p>
+          <p>Tuesday - Thursday 9:00 am - 1:00 pm</p>
           <p>
             PLEASE BE AWARE ANY JOB TO BE BILLED TO A CPSU ACCOUNT WILL REQUIRE A
             PO NUMBER STARTING JULY 1, 2025
