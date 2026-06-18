@@ -6,6 +6,7 @@ import {
   Main,
   HomepageWelcome,
   HomepageVideo,
+  HomepageAnswers,
   NavigationMenu,
   SEO,
   Header,
@@ -14,6 +15,10 @@ import {
   Testimonials,
 } from 'components';
 import { BlogInfoFragment } from 'fragments/GeneralSettings';
+import {
+  LANDING_PAGE,
+  buildLandingSchemas,
+} from 'constants/landingPageSeo';
 
 const postsPerPage = 3;
 
@@ -36,10 +41,18 @@ export default function Component() {
   const navOne = data?.footerSecondaryMenuItems?.nodes ?? [];
   const navTwo = data?.footerTertiaryMenuItems?.nodes ?? [];
   const resources = data?.resourcesFooterMenuItems?.nodes ?? [];
+  const baseSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || LANDING_PAGE.canonicalUrl;
+  const landingSchemas = buildLandingSchemas(baseSiteUrl);
 
   return (
     <>
-      <SEO title={siteTitle} description={siteDescription} />
+      <SEO
+        title={LANDING_PAGE.title || siteTitle}
+        description={LANDING_PAGE.description || siteDescription}
+        imageUrl={LANDING_PAGE.heroImage}
+        url={LANDING_PAGE.canonicalUrl}
+        schema={landingSchemas}
+      />
 
       <Header
         title={siteTitle}
@@ -54,6 +67,7 @@ export default function Component() {
         <div className="container">
           <HomepageWelcome />
         </div>
+        <HomepageAnswers />
       </Main>
 
       <Footer

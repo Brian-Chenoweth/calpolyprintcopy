@@ -107,7 +107,73 @@ Variables verified from the repo:
 | --- | --- | --- |
 | `NEXT_PUBLIC_WORDPRESS_URL` | Required | Faust/WordPress backend URL. Present in `.env.local.sample`. |
 | `FAUST_SECRET_KEY` | Required for Faust preview/API flows | Present in `.env.local.sample`; used by the Faust integration and preview/API route setup. |
-| `NEXT_PUBLIC_SITE_URL` | Used by the app, but missing from `.env.local.sample` | Used in `components/SEO/SEO.js` and `wp-templates/page.js` to build canonical URLs and structured-data URLs. If omitted, canonical URLs and some schema URLs are not generated. |
+| `NEXT_PUBLIC_SITE_URL` | Required for production-quality SEO metadata | Used in `components/SEO/SEO.js`, `wp-templates/page.js`, and `wp-templates/front-page.js` to build canonical URLs and structured-data URLs. Documented in `.env.local.sample`. |
+
+## Landing Page Source Of Truth (Single-Page Site)
+
+This site is being positioned as a single landing page for Cal Poly Print & Copy that routes users to a third-party online ordering system.
+
+- Canonical landing URL: `https://calpolyprintcopy.com/`
+- Primary conversion URL (third-party ordering): `https://calpoly.webdeskprint.com/PSP/app/`
+- Indexed business name: `Cal Poly Print & Copy`
+- Address:
+  - Robert E. Kennedy Library
+  - 1 Grand Ave., Building 35
+  - San Luis Obispo, CA 93407
+- Contact email: `calpolyprints@calpoly.edu`
+- Hours (current): Tuesday - Thursday, 9:00 AM - 1:00 PM
+- Service area wording: On-campus, San Luis Obispo, and countywide (San Luis Obispo County)
+- Audience priority: students, faculty/staff, public
+- Services:
+  - Basic Copies
+  - Banners
+  - Booklets/Programs
+  - Brochures
+  - Graphic Design Only
+  - NCR / Carbonless
+  - Post Cards
+  - Posters
+  - Signage
+- Brand messaging baseline:
+  - Cal Poly Print & Copy is your print solutions center. Conveniently located in Building 35, we specialize in small and large format prints for presentations, events, and the classroom. With easy online ordering and flexible hours, Cal Poly Print & Copy is the premier solution for your printing needs.
+- Primary image/logo used in metadata and schema:
+  - `/logo.png` (served on canonical domain)
+
+All of this is centralized in `constants/landingPageSeo.js`.
+
+## SEO, AEO, And GEO Implementation
+
+### SEO (Search Engine Optimization)
+
+- Homepage title, description, canonical URL, image, and OG/Twitter metadata are provided via `SEO` on `wp-templates/front-page.js`.
+- `components/SEO/SEO.js` supports multiple JSON-LD blocks and renders them into `<head>`.
+- `NEXT_PUBLIC_SITE_URL` is used as the authoritative base URL for canonical and schema URLs.
+
+### AEO (Answer Engine Optimization)
+
+- 40 operational customer Q&A entries are defined in `LANDING_PAGE_FAQS` in `constants/landingPageSeo.js`.
+- FAQ answers are rendered visibly in `components/HomepageAnswers/HomepageAnswers.js` using semantic `<details>/<summary>` blocks.
+- FAQ schema is emitted as `FAQPage` in `buildLandingSchemas`.
+
+### GEO (Generative Engine Optimization)
+
+- Entity, location, and service details are normalized in `LANDING_PAGE` and reused across UI and schema.
+- Structured schema graph includes:
+  - `WebPage`
+  - `LocalBusiness` with geo, address, opening hours, service area, and service catalog
+  - `FAQPage`
+- A dedicated citation-ready quick facts block (`LANDING_PAGE_CITATION_FACTS`) is rendered in `HomepageAnswers` as "Quick Facts For AI Citations" to improve extractability for generative systems.
+
+### Conversion Tracking And Attribution
+
+- Order links are UTM-tagged via `withOrderUtm` in `constants/landingPageSeo.js`:
+  - `utm_source=calpolyprintcopy.com`
+  - `utm_medium=referral`
+  - `utm_campaign=landing_page`
+  - `utm_content=<button-placement>`
+- Outbound order CTA clicks fire GA4 events (`order_click`) from:
+  - `components/HomepageVideo/HomepageVideo.js` (`event_label: hero_section`)
+  - `components/HomepageAnswers/HomepageAnswers.js` (`event_label: answers_section`)
 
 ## Important Directories And Files
 
@@ -145,10 +211,9 @@ Variables verified from the repo:
 
 ## Known Gaps And Verified TODOs
 
-- `.env.local.sample` does not document `NEXT_PUBLIC_SITE_URL`, even though the code references it for SEO/canonical behavior
 - `Footer` currently renders `menuItems`, `navTwoMenuItems`, `resourcesMenuItems`, and `testimonials`, but some templates query additional footer menu groups (`quick`, `about`, `navOne`) that are not rendered
 - Several templates pass `title={siteTitle}` into `Footer`, while `Footer` expects `siteTitle`; on those routes it falls back to the hardcoded text `Cal Poly Print and Copy`
-- Homepage business notices and the CTA target are hardcoded in `components/HomepageVideo/HomepageVideo.js`, not sourced from WordPress content
+- Homepage content is centralized in `constants/landingPageSeo.js` and rendered in React components; this content is not sourced from WordPress
 - The contact form’s Formspree form ID is hardcoded rather than configured via environment variables
 - Linting runs successfully, but `npm run lint` reports Next.js warnings about `Link` usage (`passHref`) and page-level custom font tags in `components/SEO/SEO.js`
 

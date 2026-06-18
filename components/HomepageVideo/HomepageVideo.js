@@ -1,4 +1,7 @@
+import { LANDING_PAGE, withOrderUtm } from 'constants/landingPageSeo';
+
 import { useEffect, useRef, useState } from 'react';
+import { event as trackEvent } from 'lib/gtag';
 import { Button } from 'components';
 
 import styles from './HomepageVideo.module.scss';
@@ -11,6 +14,7 @@ export default function HomepageVideo() {
   const [isHidden, setIsHidden] = useState(false);
   const [isVideoInViewport, setIsVideoInViewport] = useState(false);
   const [controlsStyle, setControlsStyle] = useState({});
+  const orderCtaHref = withOrderUtm(LANDING_PAGE.orderUrl, 'hero_button');
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -179,28 +183,36 @@ export default function HomepageVideo() {
         <div className={styles.homepageVideo}>
           <div className={styles.homepageVideoHeadingOneWrap}>
             <h1 className={styles.homepageVideoHeadingOne}>
-              *Staging* Cal Poly Print &amp; Copy
+              Cal Poly Print &amp; Copy
             </h1>
             <p className={styles.homepageVideoHeadingOne}>
-              {' '}
-              is open for business in Building 35 Room 112
+              Print solutions in Building 35
             </p>
           </div>
 
           <p>Hours of Operation</p>
           <p>Tuesday - Thursday 9:00 am - 1:00 pm</p>
+          <p>Students, faculty/staff, and the public can order online.</p>
+          <p>Serving on-campus, San Luis Obispo, and countywide print needs.</p>
           <p>
-            PLEASE BE AWARE ANY JOB TO BE BILLED TO A CPSU ACCOUNT WILL REQUIRE A
-            PO NUMBER STARTING JULY 1, 2025
-          </p>
-          <p>Faculty and staff may place orders by clicking the button below.</p>
-          <p>
-            For all other inquiries, please email{' '}
+            Need help with your file or options? Email{' '}
             <a href="mailto:calpolyprints@calpoly.edu">calpolyprints@calpoly.edu</a>
           </p>
 
-          <Button styleType="primary" href="/submit-print-online.">
-            See How
+          <Button
+            styleType="primary"
+            href={orderCtaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              trackEvent('order_click', {
+                event_category: 'conversion',
+                event_label: 'hero_section',
+                destination_url: LANDING_PAGE.orderUrl,
+              });
+            }}
+          >
+            Start Online Order
           </Button>
         </div>
 

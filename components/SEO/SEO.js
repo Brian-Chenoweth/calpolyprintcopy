@@ -15,7 +15,7 @@ import { useRouter } from 'next/router';
  * - twitterHandle?: string (default '@CalPolyPartners')
  * - themeColor?: string (default brand green)
  * - locale?: string (default 'en_US')
- * - schema?: object (extra JSON-LD to merge/override)
+ * - schema?: object|object[] (extra JSON-LD block(s))
  * - article?: {
  *     publishedTime?: string (ISO)
  *     modifiedTime?: string (ISO)
@@ -131,8 +131,10 @@ export default function SEO({
         }
       : null;
 
-  // Merge in any custom schema (last wins)
-  const jsonLd = [orgSchema, webSiteSchema, articleSchema, schema]
+  const customSchemaBlocks = Array.isArray(schema) ? schema : [schema];
+
+  // Merge in any custom schema blocks.
+  const jsonLd = [orgSchema, webSiteSchema, articleSchema, ...customSchemaBlocks]
     .filter(Boolean)
     .map((obj) => JSON.stringify(obj));
 
