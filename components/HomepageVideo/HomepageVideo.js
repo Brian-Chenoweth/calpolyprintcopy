@@ -179,7 +179,7 @@ export default function HomepageVideo() {
         <div className={styles.homepageVideo}>
           <div className={styles.homepageVideoHeadingOneWrap}>
             <h1 className={styles.homepageVideoHeadingOne}>
-              Cal Poly Print &amp; Copy
+              *Staging* Cal Poly Print &amp; Copy
             </h1>
             <p className={styles.homepageVideoHeadingOne}>
               {' '}
