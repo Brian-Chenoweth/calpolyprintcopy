@@ -1,3 +1,4 @@
+## Update staging env.local
 # Cal Poly Print & Copy
 
 This repository contains the Next.js frontend for the Cal Poly Print & Copy website. It is a headless WordPress application built with Faust.js: WordPress provides content over GraphQL, and this app renders the public site.
