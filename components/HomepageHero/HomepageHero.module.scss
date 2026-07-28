@@ -1,0 +1,104 @@
+@import 'styles/Variables';
+
+.homepageHero {
+  position: relative;
+  width: 100vw;
+  min-height: clamp(40rem, 56.1vw, 107.7rem);
+  margin-top: 82px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background-image: url('/static/print-copy-hero.jpg');
+  background-repeat: no-repeat;
+  background-position: 58% 43%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba(0, 0, 0, 0.48) 8%, rgba(0, 0, 0, 0.14) 48%, rgba(0, 0, 0, 0.2) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+.heroContent {
+  position: absolute;
+  z-index: 2;
+  left: clamp(1.6rem, 8vw, 22rem);
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(1rem, 1.7vw, 2rem);
+}
+
+.heroLine {
+  display: block;
+  width: clamp(11rem, 9.5vw, 14.5rem);
+  height: 3px;
+  background: $gold;
+}
+
+.heroTitle {
+  width: 100%;
+  all: unset;
+  display: block;
+  font-family: 'abolition', sans-serif;
+  font-size: 12rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.048em;
+  line-height: 1.1;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 1200px) and (min-width: $breakpoint-small) {
+  .heroContent {
+    left: clamp(2.4rem, 6vw, 8rem);
+    width: min(93.6rem, calc(100vw - (clamp(2.4rem, 6vw, 8rem) * 2)));
+  }
+
+  .heroLine {
+    width: clamp(9rem, 14vw, 12rem);
+  }
+
+  .heroTitle {
+    font-size: clamp(7.2rem, 9.2vw, 11rem);
+    letter-spacing: 0.042em;
+    line-height: 1.08;
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .homepageHero {
+    min-height: clamp(36rem, 92vw, 52rem);
+    background-position: 56% 40%;
+  }
+
+  .heroContent {
+    left: clamp(1.6rem, 5.2vw, 3.2rem);
+    gap: 1rem;
+  }
+
+  .heroLine {
+    width: clamp(8rem, 30vw, 11rem);
+    height: 2px;
+  }
+
+  .heroTitle {
+    width: 100%;
+    font-size: clamp(4.4rem, 11.4vw, 8rem);
+    letter-spacing: 0.04em;
+    line-height: 1.06;
+  }
+}
+
+@media (max-width: 420px) {
+  .homepageHero {
+    min-height: 40rem;
+    background-position: 60% 43%;
+  }
+}

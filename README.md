@@ -172,7 +172,6 @@ All of this is centralized in `constants/landingPageSeo.js`.
   - `utm_campaign=landing_page`
   - `utm_content=<button-placement>`
 - Outbound order CTA clicks fire GA4 events (`order_click`) from:
-  - `components/HomepageVideo/HomepageVideo.js` (`event_label: hero_section`)
   - `components/HomepageAnswers/HomepageAnswers.js` (`event_label: answers_section`)
 
 ## Important Directories And Files

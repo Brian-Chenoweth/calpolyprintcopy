@@ -8,7 +8,7 @@ import FormatDate from './FormatDate';
 import Heading from './Heading';
 import Header from './Header';
 import HomepageWelcome from './HomepageWelcome';
-import HomepageVideo from './HomepageVideo';
+import HomepageHero from './HomepageHero';
 import HomepageAnswers from './HomepageAnswers/HomepageAnswers';
 import HomepageSurveyPopup from './HomepageSurveyPopup';
 import HomepageIntro from './HomepageIntro';
@@ -43,7 +43,7 @@ export {
   Heading,
   Header,
   HomepageWelcome,
-  HomepageVideo,
+  HomepageHero,
   HomepageAnswers,
   HomepageSurveyPopup,
   HomepageNonProfit,

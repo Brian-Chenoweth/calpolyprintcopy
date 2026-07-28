@@ -5,7 +5,7 @@ import styles from 'styles/pages/_Home.module.scss';
 import {
   Main,
   HomepageWelcome,
-  HomepageVideo,
+  HomepageHero,
   HomepageAnswers,
   NavigationMenu,
   SEO,
@@ -60,7 +60,7 @@ export default function Component() {
         menuItems={primaryMenu}
       />
 
-      <HomepageVideo />
+      <HomepageHero />
 
       <Main className={styles.home}>
         {/* <EntryHeader image={mainBanner} /> */}
