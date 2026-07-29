@@ -6,8 +6,8 @@
   width: 100%;
   z-index: 9999999;
   color: var(--color-white);
-  background-color: #f8f8f7;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background: #104735;
+  transition: box-shadow 0.3s ease;
 
   &.scrolled {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -18,30 +18,54 @@
   position: relative;
 }
 
+.brand-strip {
+  background: #104735;
+  padding: 0.35rem 0 0.45rem;
+}
+
+.title-strip {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(16, 71, 53, 0.14);
+}
+
 .bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 1rem 0;
+  min-height: 2.9rem;
+  padding: 0.4rem 0;
 
   @media (min-width: $breakpoint-small) {
-    padding: 1.4rem 0;
+    min-height: 3.1rem;
+    padding: 0.5rem 0;
   }
 }
 
 .logo {
-  width: 185px;
+  width: clamp(11.5rem, 10.2vw, 16rem);
+  min-width: 11.5rem;
+  margin: 0.15rem 0;
   height: auto;
   flex: 0 0 auto;
+}
+
+.site-title {
+  margin: 0;
+  color: #104735;
+  font-family: 'utopia-std-display', serif;
+  font-size: clamp(1.6rem, 1.2vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
 }
 
 .nav-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   margin-left: auto;
   padding: 0;
   border: 1px solid rgba(21, 71, 52, 0.14);
@@ -49,8 +73,8 @@
   background: #fff;
   color: var(--color-primary);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
-    transform 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, transform 0.2s ease;
 
   &:hover,
   &:focus-visible {
@@ -249,8 +273,12 @@
   display: flex;
   flex-direction: column;
   overflow: auto;
-  background:
-    linear-gradient(180deg, rgba(232, 242, 237, 0.85) 0%, rgba(255, 255, 255, 0.98) 22%, #ffffff 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(232, 242, 237, 0.85) 0%,
+    rgba(255, 255, 255, 0.98) 22%,
+    #ffffff 100%
+  );
   border: 1px solid rgba(21, 71, 52, 0.08);
   border-radius: 2.6rem;
   box-shadow: 0 24px 64px rgba(7, 24, 18, 0.16);
@@ -275,7 +303,8 @@
   background: rgba(255, 255, 255, 0.92);
   color: #154734;
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .mobile-close:hover,
@@ -358,7 +387,8 @@
   background: rgba(255, 255, 255, 0.86);
   color: #154734;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .mobile-submenu-icon {
@@ -369,7 +399,11 @@
 .mobile-submenu {
   margin: 0 0 1rem;
   padding: 0.2rem 0 1rem;
-  background: linear-gradient(180deg, rgba(241, 247, 244, 0.9) 0%, rgba(255, 255, 255, 0.92) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(241, 247, 244, 0.9) 0%,
+    rgba(255, 255, 255, 0.92) 100%
+  );
   border: 1px solid rgba(21, 71, 52, 0.06);
   border-radius: 1.8rem;
 }
@@ -422,5 +456,14 @@
 @media (max-width: 767px) {
   .header-content {
     background-color: var(--color-white);
+  }
+
+  .bar {
+    min-height: 3.9rem;
+    padding: 0.5rem 0;
+  }
+
+  .site-title {
+    font-size: 1.7rem;
   }
 }

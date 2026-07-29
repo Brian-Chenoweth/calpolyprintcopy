@@ -31,6 +31,8 @@ export default function Header({ className, menuItems }) {
   const isMobile = useIsMobile(767);
   const menuRef = useRef(null);
 
+  const siteTitle = 'Print & Copy';
+
   const headerClasses = cx('header', className, { scrolled: isScrolled });
   const headerContentClasses = cx('container', 'header-content', { scrolled: isScrolled });
   const navClasses = cx('primary-navigation', isNavShown ? cx('show') : undefined);
@@ -67,12 +69,12 @@ export default function Header({ className, menuItems }) {
     <header className={headerClasses}>
       <SkipNavigationLink />
 
-      <div className={headerContentClasses}>
-        <div className={cx('bar')}>
+      <div className={cx('brand-strip')}>
+        <div className={headerContentClasses}>
           <div className={cx('logo')}>
             <Link href="/" title="Home">
               <Image
-                src="/logo.png"
+                src="/logo-white.png"
                 width={400}
                 height={80}
                 alt="Cal Poly University logo"
@@ -80,53 +82,60 @@ export default function Header({ className, menuItems }) {
               />
             </Link>
           </div>
-          
+        </div>
+      </div>
 
-          <button
-            type="button"
-            className={cx('nav-toggle', { open: isNavShown })}
-            onClick={() => setIsNavShown(!isNavShown)}
-            aria-label={isNavShown ? 'Close navigation' : 'Open navigation'}
-            aria-expanded={isNavShown}
-            aria-controls="mobile-navigation"
-          >
-            {isNavShown ? <FaTimes /> : <FaBars />}
-          </button>
+      <div className={cx('title-strip')}>
+        <div className={headerContentClasses}>
+          <div className={cx('bar')}>
+            <p className={cx('site-title')}>{siteTitle}</p>
 
-          {isMobile ? (
-            <MobileNav
-              isOpen={isNavShown}
-              className={cx('mobile-nav-shell')}
-              menuItems={menuItems}
-              onNavigate={() => setIsNavShown(false)}
-              onClose={() => setIsNavShown(false)}
+            <button
+              type="button"
+              className={cx('nav-toggle', { open: isNavShown })}
+              onClick={() => setIsNavShown(!isNavShown)}
+              aria-label={isNavShown ? 'Close navigation' : 'Open navigation'}
+              aria-expanded={isNavShown}
+              aria-controls="mobile-navigation"
             >
-              <li className={cx('mobile-item', 'mobile-utility-item')}>
-                <Link
-                  href="/search"
-                  title="Search"
-                  className={cx('mobile-link', 'mobile-utility-link')}
-                  onClick={() => setIsNavShown(false)}
-                >
-                  <FaSearch title="Search" role="img" />
-                  <span>Search</span>
-                </Link>
-              </li>
-            </MobileNav>
-          ) : (
-            <NavigationMenu
-              id={cx('primary-navigation')}
-              className={navClasses}
-              menuItems={menuItems}
-              ref={menuRef}
-            >
-              <li>
-                <Link href="/search" title="Search" className={cx('desktop-search-link')}>
-                  <FaSearch title="Search" role="img" />
-                </Link>
-              </li>
-            </NavigationMenu>
-          )}
+              {isNavShown ? <FaTimes /> : <FaBars />}
+            </button>
+
+            {isMobile ? (
+              <MobileNav
+                isOpen={isNavShown}
+                className={cx('mobile-nav-shell')}
+                menuItems={menuItems}
+                onNavigate={() => setIsNavShown(false)}
+                onClose={() => setIsNavShown(false)}
+              >
+                <li className={cx('mobile-item', 'mobile-utility-item')}>
+                  <Link
+                    href="/search"
+                    title="Search"
+                    className={cx('mobile-link', 'mobile-utility-link')}
+                    onClick={() => setIsNavShown(false)}
+                  >
+                    <FaSearch title="Search" role="img" />
+                    <span>Search</span>
+                  </Link>
+                </li>
+              </MobileNav>
+            ) : (
+              <NavigationMenu
+                id={cx('primary-navigation')}
+                className={navClasses}
+                menuItems={menuItems}
+                ref={menuRef}
+              >
+                <li>
+                  <Link href="/search" title="Search" className={cx('desktop-search-link')}>
+                    <FaSearch title="Search" role="img" />
+                  </Link>
+                </li>
+              </NavigationMenu>
+            )}
+          </div>
         </div>
       </div>
     </header>

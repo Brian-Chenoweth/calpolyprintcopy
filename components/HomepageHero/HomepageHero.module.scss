@@ -4,7 +4,7 @@
   position: relative;
   width: 100vw;
   min-height: clamp(40rem, 56.1vw, 107.7rem);
-  margin-top: 82px;
+  margin-top: 58px;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   background-image: url('/static/print-copy-hero.jpg');
@@ -74,6 +74,7 @@
 
 @media (max-width: $breakpoint-small) {
   .homepageHero {
+    margin-top: 72px;
     min-height: clamp(36rem, 92vw, 52rem);
     background-position: 56% 40%;
   }
