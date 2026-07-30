@@ -6,6 +6,7 @@ import {
   Main,
   HomepageWelcome,
   HomepageHero,
+  HomepageOrderCta,
   HomepageAnswers,
   NavigationMenu,
   SEO,
@@ -67,6 +68,7 @@ export default function Component() {
         <div className="container">
           <HomepageWelcome />
         </div>
+        <HomepageOrderCta />
         <HomepageAnswers />
       </Main>
 

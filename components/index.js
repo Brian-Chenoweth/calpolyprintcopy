@@ -9,6 +9,7 @@ import Heading from './Heading';
 import Header from './Header';
 import HomepageWelcome from './HomepageWelcome';
 import HomepageHero from './HomepageHero';
+import HomepageOrderCta from './HomepageOrderCta';
 import HomepageAnswers from './HomepageAnswers/HomepageAnswers';
 import HomepageSurveyPopup from './HomepageSurveyPopup';
 import HomepageIntro from './HomepageIntro';
@@ -44,6 +45,7 @@ export {
   Header,
   HomepageWelcome,
   HomepageHero,
+  HomepageOrderCta,
   HomepageAnswers,
   HomepageSurveyPopup,
   HomepageNonProfit,
