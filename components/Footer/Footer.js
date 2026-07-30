@@ -106,11 +106,6 @@ export default function Footer({ siteTitle }) {
           <p className={styles.copyright}>
             &copy; {new Date().getFullYear()} California Polytechnic State University
           </p>
-          <p className={styles.partnersLink}>
-            <a href="https://calpolypartners.org/" target="_blank" rel="noopener noreferrer">
-              Cal Poly Partners Home
-            </a>
-          </p>
         </div>
       </div>
     </footer>

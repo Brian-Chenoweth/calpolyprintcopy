@@ -9,14 +9,14 @@
 }
 
 .mediaPanel {
-  background-image: url('/static/print-copy-hero.jpg');
+  background-image: url('/static/cal-poly-print-copy-worker.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .contentPanel {
-  background: linear-gradient(135deg, #0f5944 0%, #0a4a3a 100%);
+  background: linear-gradient(135deg, #154734 35%, #26825F 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +31,7 @@
 .heading {
   margin: 0 0 1.3rem;
   font-family: 'abolition', sans-serif;
-  font-size: clamp(4rem, 4.4vw, 6rem);
+  font-size: clamp(4rem, 4.4vw, 6.5rem);
   font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
@@ -44,10 +44,10 @@
 }
 
 .description {
-  margin: 0 auto 1.9rem;
+  margin: 0 auto 4rem;
 //   max-width: 44rem;
   font-family: 'utopia-std-display', serif;
-  font-size: clamp(1.5rem, 1.2vw, 2rem);
+  font-size: clamp(1.5rem, 1.2vw, 2.5rem);
   line-height: 1.5;
   color: #ffffff;
 }
@@ -63,6 +63,7 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   transition: background-color 0.2s ease;
+  padding: 1.5rem 3rem;
 
   &:hover,
   &:focus-visible {
