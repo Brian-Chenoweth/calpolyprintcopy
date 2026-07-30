@@ -13,14 +13,14 @@
 }
 
 .heading {
-  margin: 0 0 clamp(4.2rem, 6vw, 6.4rem);
+  margin: 0 0 clamp(4.2rem, 6vw, 7.5rem);
   text-align: center;
   font-family: 'abolition', sans-serif;
   font-size: clamp(4.8rem, 5.4vw, 7.2rem);
   font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0.08rem;
+//   letter-spacing: 0.08rem;
   color: #0f5a46;
 }
 
@@ -30,7 +30,7 @@
 
 .row {
   display: grid;
-  grid-template-columns: minmax(0, 58%) minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(3rem, 3.8vw, 6.4rem);
   align-items: start;
 
@@ -40,7 +40,7 @@
 }
 
 .rowReverse {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 58%);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .mediaWrap {
@@ -59,29 +59,32 @@
 
   h3 {
     margin: 0 0 1.8rem;
-    font-family: 'abolition', sans-serif;
+    font-family: 'Teko', sans-serif;
     color: $gold;
-    font-size: clamp(3rem, 2.35vw, 4.2rem);
+    font-size: clamp(3rem, 2.35vw, 3.2rem);
+    letter-spacing: 0.8px;
     font-weight: 400;
     line-height: 1;
+    text-transform: none;
   }
+
 
   p {
     margin: 0 0 1.4rem;
     font-size: clamp(1.5rem, 1.1vw, 1.95rem);
-    color: #22252b;
+    // color: #22252b;
     line-height: 1.4;
   }
 
   ul {
     margin: 0;
-    padding-left: 2.4rem;
+    // padding-left: 2.4rem;
   }
 
   li {
     margin: 0 0 0.9rem;
     font-size: clamp(1.45rem, 1.05vw, 1.9rem);
-    color: #22252b;
+    // color: #22252b;
     line-height: 1.3;
   }
 }

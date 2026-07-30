@@ -40,10 +40,10 @@ export default function HomepageWhatCanPrint() {
         <div className={styles.row}>
           <div className={styles.mediaWrap}>
             <Image
-              src="/static/banner.jpeg"
+              src="/static/cal-poly-print-copy-booklet-production.jpg"
               width={980}
               height={620}
-              alt="Placeholder print production image"
+              alt="Blue printed booklets stacked on a conveyor belt in the Cal Poly Print & Copy production area."
               className={styles.image}
             />
           </div>
@@ -72,10 +72,10 @@ export default function HomepageWhatCanPrint() {
 
           <div className={styles.mediaWrap}>
             <Image
-              src="/static/print-copy-hero.jpg"
+              src="/static/cal-poly-print-copy-large-format-printing.jpg"
               width={980}
               height={620}
-              alt="Placeholder large-format printer image"
+              alt="Large-format printing equipment producing colorful banners at Cal Poly Print & Copy."
               className={styles.image}
             />
           </div>
@@ -84,10 +84,10 @@ export default function HomepageWhatCanPrint() {
         <div className={styles.row}>
           <div className={styles.mediaWrap}>
             <Image
-              src="/static/spill-the-ink.png"
+              src="/static/cal-poly-print-copy-spiral-bound-booklets.jpg"
               width={980}
               height={620}
-              alt="Placeholder finishing services image"
+              alt="Spiral-bound booklets produced at Cal Poly Print & Copy."
               className={styles.image}
             />
           </div>
