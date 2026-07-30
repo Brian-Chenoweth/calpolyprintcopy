@@ -7,6 +7,7 @@ import {
   HomepageWelcome,
   HomepageHero,
   HomepageOrderCta,
+  HomepageWhatCanPrint,
   HomepageAnswers,
   NavigationMenu,
   SEO,
@@ -69,6 +70,7 @@ export default function Component() {
           <HomepageWelcome />
         </div>
         <HomepageOrderCta />
+        <HomepageWhatCanPrint />
         <HomepageAnswers />
       </Main>
 

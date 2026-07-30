@@ -1,116 +1,118 @@
-// Footer.js
-import classNames from 'classnames/bind';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
-import { NavigationMenu, Testimonials } from '../';
-import testimonialStyles from '../Testimonials/Testimonials.module.scss';
+import { LANDING_PAGE, withOrderUtm } from 'constants/landingPageSeo';
 
 import styles from './Footer.module.scss';
 
-const cx = classNames.bind(styles);
-const t = classNames.bind(testimonialStyles);
+const orderHref = withOrderUtm(LANDING_PAGE.orderUrl, 'footer_order_link');
 
-export default function Footer({
-  siteTitle,
-  menuItems,
-  navTwoMenuItems,
-  resourcesMenuItems,
-  testimonials = [],
-}) {
+const PRIMARY_LINKS = [
+  { label: 'University Home', href: 'https://www.calpoly.edu/' },
+  { label: 'My Cal Poly Portal', href: 'https://myportal.calpoly.edu/' },
+  { label: 'Campus Map', href: 'https://maps.calpoly.edu/' },
+  { label: 'Campus Safety', href: 'https://afd.calpoly.edu/ehs/police/' },
+];
+
+const SECONDARY_LINKS = [
+  { label: 'Privacy Notice', href: 'https://www.calpoly.edu/privacy-notice' },
+  { label: 'Website Feedback', href: 'https://www.calpoly.edu/web-feedback' },
+  { label: 'Web Accessibility Statement', href: 'https://www.calpoly.edu/web-accessibility' },
+  { label: 'Title IX', href: 'https://titleix.calpoly.edu/' },
+  {
+    label: 'Campus Annual Security Report (PDF)',
+    href: 'https://www.calpoly.edu/sites/default/files/2024-09/ASR2024.pdf',
+  },
+  { label: 'Campus Safety Plan (PDF)', href: 'https://afd.calpoly.edu/ehs/police/files/Campus-Safety-Plan.pdf' },
+  { label: 'Students with Dependents', href: 'https://deanofstudents.calpoly.edu/students-with-dependents' },
+];
+
+export default function Footer({ siteTitle }) {
   return (
-    <>
-      {/* Testimonials (moved from front-page.js) */}
-      {!!testimonials?.length && (
-        <section className={t('testimonials')}>
-          <div className="container">
-            <div className={t('testimonial')}>
-              <Testimonials testimonials={testimonials} />
+    <footer className={styles.footer}>
+      <div className={styles.main}>
+        <div className={`container ${styles.wrap}`}>
+          <div className={styles.topMeta}>
+            <div>
+              <h3>Location</h3>
+              <p>Building 35, Room 112</p>
             </div>
-          </div>
-        </section>
-      )}
 
-      <footer className={cx('footer')}>
-        <div className={cx('footer-inner')}>
-          <div className={cx('container', 'footerWrap')}>
-            <div className={cx('footer-nav-contact-info')}>
-              <div className={cx('resources')}>
-                <h3>Connect With Print &amp; Copy</h3>
-                <NavigationMenu
-                  className={cx('quick')}
-                  menuItems={resourcesMenuItems}
-                />
-              </div>
+            <div>
+              <h3>Order</h3>
+              <a href={orderHref} target="_blank" rel="noopener noreferrer">
+                Access Print Portal
+              </a>
+            </div>
 
-              <div className={cx('footer-nav')}>
-                <h3>Services, Supplies, and Equipment</h3>
-                <NavigationMenu className={cx('quick')} menuItems={menuItems} />
-              </div>
-
-              <div className={cx('contact-info')}>
-                <div className={cx('logo')}>
-                  <Link
-                    href="/"
-                    title="Home"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Image
-                      src="/logo-white.png"
-                      width={150}
-                      height={38}
-                      alt="Cal Poly University logo"
-                    />
-                  </Link>
-                </div>
-
-                <p>Robert E. Kennedy Library</p>
-                <p>1 Grand Ave., Building 15</p>
-                <p>San Luis Obispo, CA 93407</p>
-                <p>Hours of Operation</p>
-                <p>Tuesday - Thursday 9:00 am - 1:00 pm</p>
-
-                <a href="tel:8057562399" className={cx('phone')}>
-                  805-756-2399
-                </a>
-
-                <NavigationMenu
-                  className={cx('nav', 'logoNav')}
-                  menuItems={navTwoMenuItems}
-                />
-              </div>
+            <div className={styles.contact}>
+              <p className={styles.brandName}>{siteTitle ?? 'Cal Poly Print & Copy'}</p>
+              <p>
+                <a href={`mailto:${LANDING_PAGE.email}`}>{LANDING_PAGE.email}</a>
+              </p>
+              <p>
+                <a href="tel:8057562399">805-756-2399</a>
+              </p>
             </div>
           </div>
 
-          <div className={cx('copyright')}>
-            <div className={cx('container', 'footerWrap')}>
-              &copy; {new Date().getFullYear()}{' '}
-              <Link href="/" title="Home" rel="noopener noreferrer">
-                {siteTitle ?? 'Cal Poly Print and Copy'}
-              </Link>{' '}
-              ||{' '}
-              <Link
-                href="https://calpolypartners.org/"
-                title="Cal Poly Partners"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Cal Poly Partners Home
-              </Link>{' '}
-              ||{' '}
-              <Link
-                href="https://www.calpoly.edu/"
-                title="Cal Poly Home"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Cal Poly Home
+          <div className={styles.brandRow}>
+            <div className={styles.brandCluster}>
+              <Link href="/" title="Home" className={styles.logoLink}>
+                <Image
+                  src="/logo-white.png"
+                  width={218}
+                  height={58}
+                  alt="Cal Poly University logo"
+                />
               </Link>
+              <p className={styles.brandAddress}>
+                1 Grand Avenue, San Luis Obispo, CA 93407
+              </p>
+              <a href="tel:8057561111" className={styles.mainPhone}>
+                805-756-1111
+              </a>
+              <div className={styles.social}>
+                <a href="https://www.instagram.com/calpoly/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <FaInstagram />
+                </a>
+                <a href="https://x.com/calpoly" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                  <FaTwitter />
+                </a>
+                <a href="https://www.facebook.com/calpoly" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <FaFacebookF />
+                </a>
+              </div>
             </div>
           </div>
+
+          <ul className={`${styles.utilityLinks} ${styles.utilityPrimary}`}>
+            {PRIMARY_LINKS.map((item) => (
+              <li key={item.label}>
+                <a href={item.href} target="_blank" rel="noopener noreferrer">{item.label}</a>
+              </li>
+            ))}
+          </ul>
+
+          <ul className={`${styles.utilityLinks} ${styles.utilitySecondary}`}>
+            {SECONDARY_LINKS.map((item) => (
+              <li key={item.label}>
+                <a href={item.href} target="_blank" rel="noopener noreferrer">{item.label}</a>
+              </li>
+            ))}
+          </ul>
+
+          <p className={styles.copyright}>
+            &copy; {new Date().getFullYear()} California Polytechnic State University
+          </p>
+          <p className={styles.partnersLink}>
+            <a href="https://calpolypartners.org/" target="_blank" rel="noopener noreferrer">
+              Cal Poly Partners Home
+            </a>
+          </p>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 }
