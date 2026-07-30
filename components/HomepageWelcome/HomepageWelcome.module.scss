@@ -12,8 +12,8 @@
 
 .panel {
   position: relative;
-  margin: -2.1rem 0 0;
-  padding: 3.6rem clamp(2rem, 4vw, 4.5rem) 3.8rem;
+  // margin: -2.1rem 0 0;
+  padding: 8rem 0;
   background: #fff;
   border: 0;
   box-shadow: none;
@@ -50,19 +50,19 @@
 }
 
 .lead {
-  max-width: 980px;
-  margin: 0 auto 1.3rem;
-  color: #124536;
+  // max-width: 980px;
+  margin: 1.8rem 0;
+  color: #154734;
   font-family: 'utopia-std-display', serif;
-  font-size: clamp(1.45rem, 1.15vw, 1.85rem);
+  font-size: clamp(1.45rem, 1.15vw, 2.56rem);
   line-height: 1.55;
 }
 
 .body {
-  max-width: 920px;
-  margin: 0 auto;
-  color: #46484d;
-  font-size: clamp(1.4rem, 1.02vw, 1.7rem);
+  // max-width: 920px;
+  margin: 1.8rem 0;
+  color: #181816;
+  font-size: clamp(1.4rem, 1.02vw, 1.92rem);
   line-height: 1.6;
 }
 
