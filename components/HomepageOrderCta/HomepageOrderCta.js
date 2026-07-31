@@ -2,6 +2,7 @@ import {
   LANDING_PAGE,
   withOrderUtm,
 } from 'constants/landingPageSeo';
+
 import { event as trackEvent } from 'lib/gtag';
 import { Button } from 'components';
 

@@ -1,7 +1,7 @@
 // Header.jsx
 import { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
-import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -71,7 +71,7 @@ export default function Header({ className, menuItems }) {
       <div className={cx('brand-strip')}>
         <div className={headerContentClasses}>
           <div className={cx('logo')}>
-            <Link href="/" title="Home">
+            <Link href="/" title="Home" passHref>
               <Image
                 src="/cal-poly-logo-reversed.png"
                 width={400}
@@ -95,7 +95,7 @@ export default function Header({ className, menuItems }) {
                 ref={menuRef}
               >
                 <li>
-                  <Link href="/search" title="Search" className={cx('desktop-search-link')}>
+                  <Link href="/search" title="Search" className={cx('desktop-search-link')} passHref>
                     <FaSearch title="Search" role="img" />
                   </Link>
                 </li>

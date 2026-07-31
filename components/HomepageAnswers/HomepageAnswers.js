@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import { LANDING_PAGE, withOrderUtm } from 'constants/landingPageSeo';
+
+import Image from 'next/image';
 
 import styles from './HomepageAnswers.module.scss';
 
