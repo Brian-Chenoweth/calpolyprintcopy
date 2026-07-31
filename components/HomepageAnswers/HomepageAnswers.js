@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { LANDING_PAGE, withOrderUtm } from 'constants/landingPageSeo';
-import { Button } from 'components';
 
 import styles from './HomepageAnswers.module.scss';
 
@@ -60,15 +59,14 @@ export default function HomepageAnswers() {
                 ))}
               </ul>
 
-              <Button
-                styleType="primary"
+              <a
                 href={orderCtaHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.portalLink}
               >
                 Access the Print Portal
-              </Button>
+              </a>
             </div>
           </div>
         </div>

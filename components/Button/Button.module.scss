@@ -39,3 +39,10 @@
     display: none !important;
   }
 }
+
+@media (max-width: $breakpoint-small) {
+  .button {
+    justify-content: center;
+    text-align: center;
+  }
+}

@@ -112,7 +112,10 @@
   &:hover,
   &:focus-visible {
     color: #0e5843 !important;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: $gold;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
   }
 }
 
@@ -253,6 +256,10 @@
 
   .supportSection {
     padding-top: 4.8rem;
+  }
+
+  .portalLink {
+    padding: 0 !important;
   }
 
   .supportCards {

@@ -291,6 +291,11 @@
   .logoLink :global(img) {
     width: 200px;
   }
+
+  .utilityLinks,
+  .copyright {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: $breakpoint-small) {
@@ -354,6 +359,7 @@
   }
 
   .utilityLinks {
+    margin-left: 0;
     gap: 10px 14px;
 
     a {

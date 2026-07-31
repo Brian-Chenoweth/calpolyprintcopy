@@ -39,7 +39,7 @@ h1.postTitle {
 
 h2 {
   font-size: 3.25rem;
-  line-height: 3.75rem;
+  line-height: 5rem;
   color: #035642;
   margin: 0 0 2.25rem 0;
   // text-transform: uppercase;
@@ -106,10 +106,20 @@ p {
 a {
   color: var(--color-primary);
   text-decoration: none;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  &:hover {
-    color: $gold !important;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
   }
 }
 
