@@ -13,9 +13,6 @@ import HomepageOrderCta from './HomepageOrderCta';
 import HomepageWhatCanPrint from './HomepageWhatCanPrint';
 import HomepageAnswers from './HomepageAnswers/HomepageAnswers';
 import HomepageSurveyPopup from './HomepageSurveyPopup';
-import HomepageIntro from './HomepageIntro';
-import HomepageNonProfit from './HomepageNonProfit';
-import HomepageStudentNeeds from './HomepageStudentNeeds';
 import LoadMore from './LoadMore';
 import Main from './Main';
 import NavigationMenu from './NavigationMenu/NavigationMenu';
@@ -50,9 +47,6 @@ export {
   HomepageWhatCanPrint,
   HomepageAnswers,
   HomepageSurveyPopup,
-  HomepageNonProfit,
-  HomepageStudentNeeds,
-  HomepageIntro,
   LoadMore,
   Main,
   NavigationMenu,

@@ -7,7 +7,7 @@ export default function HomepageWelcome() {
         <div className={styles.panel}>
           <div className={styles.content}>
             <h2 className={styles.heading}>
-              <span>We Make Learn By Doing</span>
+              <span>We Make Learn By Doing&nbsp;</span>
               <span className={styles.highlight}>Visible</span>
             </h2>
             <p className={styles.lead}>
