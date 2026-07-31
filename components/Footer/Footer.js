@@ -1,8 +1,8 @@
+import { LANDING_PAGE, withOrderUtm } from 'constants/landingPageSeo';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
-
-import { LANDING_PAGE, withOrderUtm } from 'constants/landingPageSeo';
 
 import styles from './Footer.module.scss';
 
@@ -59,7 +59,7 @@ export default function Footer({ siteTitle }) {
           </div>
 
           <div className={styles.brandRow}>
-            <Link href="/" title="Home" className={styles.logoLink}>
+            <Link href="/" title="Home" className={styles.logoLink} passHref>
               <Image
                 src="/cal-poly-logo-reversed.png"
                 width={218}
