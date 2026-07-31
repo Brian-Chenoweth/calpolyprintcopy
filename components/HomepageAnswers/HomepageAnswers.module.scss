@@ -42,12 +42,6 @@
   height: 100%;
 }
 
-.resourceImage,
-.supportImage,
-.helpImage {
-  // object-fit: cover;
-}
-
 .resourceContent {
   padding: clamp(2.8rem, 3.4vw, 4.2rem);
 
@@ -244,7 +238,7 @@
   }
 
   .resourceContent {
-    padding: 2.4rem 2rem 2.8rem;
+    padding: 2.6rem 2rem 3rem;
 
     h2 {
       font-size: clamp(3.4rem, 10vw, 4.4rem);
@@ -252,7 +246,8 @@
 
     p,
     li {
-      font-size: 1.45rem;
+      font-size: 1.55rem;
+      line-height: 1.55;
     }
   }
 
@@ -265,7 +260,7 @@
   }
 
   .helpContent {
-    padding: 2.8rem 1.8rem 3.2rem;
+    padding: 3rem 1.8rem 3.4rem;
   }
 
   .helpInner {
@@ -274,7 +269,8 @@
     }
 
     p {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
+      line-height: 1.6;
     }
   }
 }

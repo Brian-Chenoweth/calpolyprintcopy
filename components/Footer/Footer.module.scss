@@ -256,6 +256,10 @@
 }
 
 @media (max-width: $breakpoint-medium) {
+  .footer {
+    margin-top: 88px;
+  }
+
   .mountains {
     inset: 0;
   }
@@ -272,6 +276,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 24px;
     margin-bottom: 38px;
+    padding-top: 132px;
   }
 
   .contact {
@@ -289,6 +294,10 @@
 }
 
 @media (max-width: $breakpoint-small) {
+  .footer {
+    margin-top: 56px;
+  }
+
   .mountains {
     inset: 0;
   }
@@ -301,6 +310,7 @@
     grid-template-columns: 1fr;
     row-gap: 24px;
     margin-bottom: 30px;
+    padding-top: 88px;
   }
 
   .topMeta {
@@ -347,7 +357,8 @@
     gap: 10px 14px;
 
     a {
-      font-size: 13px;
+      font-size: 14px;
+      line-height: 1.35;
     }
   }
 
