@@ -8,7 +8,6 @@ import { useRouter } from 'next/router';
 
 import { NavigationMenu, SkipNavigationLink } from '../';
 
-import MobileNav from './MobileNav';
 import styles from './Header.module.scss';
 let cx = classNames.bind(styles);
 
@@ -89,39 +88,6 @@ export default function Header({ className, menuItems }) {
         <div className={headerContentClasses}>
           <div className={cx('bar')}>
             <p className={cx('site-title')}>{siteTitle}</p>
-
-            <button
-              type="button"
-              className={cx('nav-toggle', { open: isNavShown })}
-              onClick={() => setIsNavShown(!isNavShown)}
-              aria-label={isNavShown ? 'Close navigation' : 'Open navigation'}
-              aria-expanded={isNavShown}
-              aria-controls="mobile-navigation"
-            >
-              {isNavShown ? <FaTimes /> : <FaBars />}
-            </button>
-
-            {isMobile ? (
-              <MobileNav
-                isOpen={isNavShown}
-                className={cx('mobile-nav-shell')}
-                menuItems={menuItems}
-                onNavigate={() => setIsNavShown(false)}
-                onClose={() => setIsNavShown(false)}
-              >
-                <li className={cx('mobile-item', 'mobile-utility-item')}>
-                  <Link
-                    href="/search"
-                    title="Search"
-                    className={cx('mobile-link', 'mobile-utility-link')}
-                    onClick={() => setIsNavShown(false)}
-                  >
-                    <FaSearch title="Search" role="img" />
-                    <span>Search</span>
-                  </Link>
-                </li>
-              </MobileNav>
-            ) : (
               <NavigationMenu
                 id={cx('primary-navigation')}
                 className={navClasses}
@@ -134,7 +100,6 @@ export default function Header({ className, menuItems }) {
                   </Link>
                 </li>
               </NavigationMenu>
-            )}
           </div>
         </div>
       </div>
