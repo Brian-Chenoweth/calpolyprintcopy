@@ -103,7 +103,6 @@
   // letter-spacing: 0.01em;
   line-height: 1;
   text-transform: uppercase;
-  padding: 0;
   text-decoration: none;
 
   &::before {
@@ -215,10 +214,21 @@
     text-transform: uppercase;
   }
 
+
+  .bigger {
+    margin: 0 auto 3rem;
+    font-family: "utopia-std-display", serif;
+    font-size: clamp(1.5rem, 1.2vw, 2.5rem);
+    line-height: 1.5;
+    color: #ffffff;
+  }
+
   p {
+    font-weight: 500;
     margin: 0 0 0.8rem;
     font-size: clamp(1.35rem, 0.95vw, 1.6rem);
     line-height: 1.55;
+    color: #fff;
   }
 
   a {

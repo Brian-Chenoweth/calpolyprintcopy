@@ -103,10 +103,10 @@ export default function HomepageAnswers() {
         <div className={styles.helpGrid}>
           <div className={styles.helpMedia}>
             <Image
-              src="/static/print-copy-hero.jpg"
+              src="/static/cal-poly-robert-e-kennedy-library.jpg"
               width={980}
               height={540}
-              alt="Placeholder help section image"
+              alt="Robert E. Kennedy Library at Cal Poly"
               className={styles.helpImage}
             />
           </div>
@@ -116,9 +116,8 @@ export default function HomepageAnswers() {
               <h2 id="help-heading">
                 Need <span className={styles.gold}>Help?</span>
               </h2>
-              <p>
-                Not sure what to order? Have questions about file setup or
-                sizing? We&apos;re here to help.
+              <p className={styles.bigger}>
+                Not sure what to order? Have questions about file setup or sizing? We&apos;re happy to help.
               </p>
               <p>
                 Email: <a href={`mailto:${LANDING_PAGE.email}`}>{LANDING_PAGE.email}</a>
