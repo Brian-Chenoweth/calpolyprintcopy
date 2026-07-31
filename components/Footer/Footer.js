@@ -31,6 +31,7 @@ const SECONDARY_LINKS = [
 export default function Footer({ siteTitle }) {
   return (
     <footer className={styles.footer}>
+      <div className={styles.mountains} aria-hidden="true" />
       <div className={styles.main}>
         <div className={`container ${styles.wrap}`}>
           <div className={styles.topMeta}>
@@ -58,18 +59,16 @@ export default function Footer({ siteTitle }) {
           </div>
 
           <div className={styles.brandRow}>
-            <div className={styles.brandCluster}>
-              <Link href="/" title="Home" className={styles.logoLink}>
-                <Image
-                  src="/logo-white.png"
-                  width={218}
-                  height={58}
-                  alt="Cal Poly University logo"
-                />
-              </Link>
-              <p className={styles.brandAddress}>
-                1 Grand Avenue, San Luis Obispo, CA 93407
-              </p>
+            <Link href="/" title="Home" className={styles.logoLink}>
+              <Image
+                src="/logo-white.png"
+                width={218}
+                height={58}
+                alt="Cal Poly University logo"
+              />
+            </Link>
+            <div className={styles.brandDetails}>
+              <p className={styles.brandAddress}>1 Grand Avenue, San Luis Obispo, CA 93407</p>
               <a href="tel:8057561111" className={styles.mainPhone}>
                 805-756-1111
               </a>
