@@ -61,7 +61,7 @@ export default function Footer({ siteTitle }) {
           <div className={styles.brandRow}>
             <Link href="/" title="Home" className={styles.logoLink}>
               <Image
-                src="/logo-white.png"
+                src="/cal-poly-logo-reversed.png"
                 width={218}
                 height={58}
                 alt="Cal Poly University logo"

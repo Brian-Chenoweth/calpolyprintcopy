@@ -34,11 +34,11 @@
   justify-content: space-between;
   gap: 1.5rem;
   min-height: 2.9rem;
-  padding: 0.4rem 0;
+  padding: 1rem 0;
 
   @media (min-width: $breakpoint-small) {
     min-height: 3.1rem;
-    padding: 0.5rem 0;
+    // padding: 0.5rem 0;
   }
 }
 
@@ -54,7 +54,7 @@
   margin: 0;
   color: #104735;
   font-family: 'utopia-std-display', serif;
-  font-size: clamp(1.6rem, 1.2vw, 2.2rem);
+  font-size: clamp(1.6rem, 1.2vw, 3.5rem);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.1;

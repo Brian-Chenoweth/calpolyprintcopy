@@ -74,7 +74,7 @@ export default function Header({ className, menuItems }) {
           <div className={cx('logo')}>
             <Link href="/" title="Home">
               <Image
-                src="/logo-white.png"
+                src="/cal-poly-logo-reversed.png"
                 width={400}
                 height={80}
                 alt="Cal Poly University logo"

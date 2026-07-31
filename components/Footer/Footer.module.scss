@@ -4,9 +4,11 @@
   position: relative;
   color: #ffffff;
   background: transparent;
+  margin-top: 125px;
 }
 
 .mountains {
+  // margin-top: 75px;
   position: absolute;
   inset: 0;
   overflow: hidden;
@@ -44,7 +46,8 @@
 
 .main {
   position: relative;
-  min-height: 780px;
+  // min-height: 780px;
+  padding-bottom: 7.5rem;
   overflow: hidden;
   background: transparent;
   z-index: 0;
@@ -64,9 +67,10 @@
   column-gap: 72px;
   row-gap: 28px;
   margin-bottom: 52px;
+  padding-top: 200px;
 
   h3 {
-    margin: 0 0 16px;
+    margin: 0 0 8px;
     font-family: 'abolition', sans-serif;
     font-size: 27px;
     line-height: 1;
@@ -79,7 +83,7 @@
   p,
   a {
     margin: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+    // font-family: 'Source Sans Pro', sans-serif;
     font-size: 17px;
     line-height: 1.35;
     font-weight: 400;
@@ -106,6 +110,13 @@
   a {
     font-size: 16px;
     line-height: 1.45;
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-color: $gold;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
   }
 }
 
@@ -179,6 +190,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  margin-left: 65px;
 
   li {
     list-style-type: none;
@@ -222,13 +234,14 @@
   font-size: 14px;
   line-height: 1.5;
   font-weight: 400;
+  margin-left: 65px;
 }
 
 @media screen and (min-width: 75em) {
   .mountains {
     &::before {
-      top: 20px;
-      transform: skewY(-3deg);
+      top: 0px;
+      transform: skewY(-4deg);
       background: #154734;
     }
 
