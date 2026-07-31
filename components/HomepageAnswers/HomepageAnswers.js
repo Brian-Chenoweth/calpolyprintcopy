@@ -17,18 +17,18 @@ const RESOURCE_ITEMS = [
 const SUPPORT_CARDS = [
   {
     title: 'Reliable',
-    image: '/static/cal-poly-campus-mustang-way-students-biking-walking.jpg',
-    copy: 'Quality prints and dependable turnaround when your deadline matters most.',
+    image: '/static/cal-poly-print-copy-resume-printing.jpg',
+    copy: 'Student reviewing a printed resume beside a laptop displaying a digital copy.',
   },
   {
     title: 'Student-Friendly',
-    image: '/static/banner.jpeg',
-    copy: 'From class projects to research posters, we make campus printing simple and accessible.',
+    image: '/static/cal-poly-students-walking-on-campus.jpg',
+    copy: 'Three Cal Poly students wearing backpacks walk together across campus.',
   },
   {
-    title: 'Every Purchase Gives Back',
-    image: '/static/print-copy-hero.jpg',
-    copy: 'Print services support the university community and help sustain valuable campus resources.',
+    title: 'Every Order Gives Back',
+    image: '/static/cal-poly-students-campus-welcome-event.jpg',
+    copy: 'Cal Poly students and volunteers walking together during a campus welcome event.',
   },
 ];
 

@@ -45,7 +45,7 @@
 .resourceImage,
 .supportImage,
 .helpImage {
-  object-fit: cover;
+  // object-fit: cover;
 }
 
 .resourceContent {
@@ -125,16 +125,17 @@
 
 .supportSection {
   padding: clamp(6rem, 7vw, 8.8rem) 0 clamp(4rem, 5vw, 5.8rem);
+  background: #f8f8f7;
 }
 
 .supportHeading {
-  margin: 0 0 clamp(2.6rem, 3.8vw, 4.2rem);
+  margin: 0 0 clamp(2.6rem, 3.8vw, 6rem);
   text-align: center;
   font-family: 'abolition', sans-serif;
-  font-size: clamp(4.8rem, 5vw, 6.8rem);
+  font-size: clamp(4.8rem, 5vw, 6rem);
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.06rem;
+  letter-spacing: 2.4px;
   color: #0e5843;
 }
 
@@ -155,15 +156,16 @@
 }
 
 .supportBody {
-  padding: 1.4rem 1.5rem 1.8rem;
+  padding: 3rem;
 
   h3 {
     margin: 0 0 0.8rem;
-    font-size: clamp(1.8rem, 1.2vw, 2.2rem);
+    // font-size: clamp(1.8rem, 1.2vw, 2.2rem);
     color: #0e5843;
     font-family: 'abolition', sans-serif;
     font-weight: 400;
-    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    // text-transform: uppercase;
   }
 
   p {
@@ -177,6 +179,7 @@
 .helpSection {
   width: 100vw;
   margin: clamp(4.8rem, 6vw, 7.6rem) calc(50% - 50vw) 0;
+  margin-top: 0;
 }
 
 .helpGrid {
