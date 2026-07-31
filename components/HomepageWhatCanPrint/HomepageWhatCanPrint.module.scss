@@ -94,6 +94,14 @@
     grid-template-columns: 1fr;
   }
 
+  .row > .mediaWrap {
+    order: 1;
+  }
+
+  .row > .content {
+    order: 2;
+  }
+
   .rowReverse {
     grid-template-columns: 1fr;
   }
