@@ -11,9 +11,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 92px;
+    height: 72px;
     background: #ffffff;
-    clip-path: polygon(0 0, 100% 0, 100% 44px, 50% 78px, 0 40px);
+    clip-path: polygon(0 0, 100% 0, 100% 30px, 50% 58px, 0 24px);
     z-index: 3;
     pointer-events: none;
   }
@@ -21,9 +21,9 @@
 
 .main {
   position: relative;
-  min-height: 692px;
+  min-height: 640px;
   overflow: hidden;
-  background: linear-gradient(109.79deg, #00533c 15%, #00845c 100%);
+  background: linear-gradient(104deg, #004f39 10%, #00815a 60%, #007f58 100%);
 
   &::before,
   &::after {
@@ -36,20 +36,20 @@
 
   &::before {
     top: 0;
-    height: 132px;
+    height: 118px;
     width: 100%;
-    background: #004833;
-    clip-path: polygon(0 14px, 100% 0, 100% 70px, 78% 26px, 50% 50px, 23% 30px, 0 52px);
+    // background: #004935;
+    clip-path: polygon(0 16px, 100% 0, 100% 62px, 78% 24px, 50% 40px, 22% 28px, 0 46px);
     z-index: 0;
   }
 
   &::after {
-    top: 58px;
+    top: 46px;
     left: 0;
     width: 100%;
-    height: 176px;
-    background: rgba(0, 72, 51, 0.28);
-    clip-path: polygon(0 0, 100% 42px, 100% 148px, 0 88px);
+    height: 164px;
+    background: rgba(0, 72, 51, 0.24);
+    clip-path: polygon(0 0, 100% 30px, 100% 138px, 0 78px);
     opacity: 1;
     z-index: 1;
   }
@@ -59,17 +59,18 @@
   position: relative;
   z-index: 2;
   max-width: 1923px;
-  padding-top: 180px;
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-top: 168px;
+  padding-left: 118px;
+  padding-right: 118px;
 }
 
 .topMeta {
   display: grid;
-  grid-template-columns: 221px 221px 1fr;
-  column-gap: 84px;
+  grid-template-columns: 230px 228px minmax(0, 1fr);
+  column-gap: 98px;
   align-items: start;
-  margin-bottom: 150px;
+  margin-bottom: 126px;
+  margin-top: 126px;
 
   h3 {
     margin: 0 0 16px;
@@ -86,8 +87,8 @@
   a {
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 19.2px;
-    line-height: 19px;
+    font-size: 18px;
+    line-height: 1.25;
     font-weight: 400;
     color: #ffffff;
     text-decoration: none;
@@ -96,7 +97,7 @@
 
 .contact {
   justify-self: end;
-  width: 282px;
+  width: 284px;
   text-align: left;
 
   &::before {
@@ -110,28 +111,28 @@
 
   p,
   a {
-    font-size: 17.6px;
-    line-height: 23px;
+    font-size: 16px;
+    line-height: 1.45;
   }
 }
 
 .brandName {
-  margin: 0 0 14px !important;
+  margin: 0 0 12px !important;
   font-family: 'Times New Roman', serif;
-  font-size: 26px !important;
-  line-height: 31px;
+  font-size: 24px !important;
+  line-height: 1.25;
   font-weight: 400;
 }
 
 .brandRow {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .brandCluster {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0 17px;
+  gap: 0 16px;
 }
 
 .logoLink {
@@ -147,15 +148,15 @@
 .mainPhone {
   margin: 0;
   font-family: 'Times New Roman', serif;
-  font-size: 19.8px;
-  line-height: 32px;
+  font-size: 18px;
+  line-height: 1.35;
   font-weight: 400;
   color: #ffffff;
   text-decoration: none;
 }
 
 .mainPhone {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .social {
@@ -168,7 +169,7 @@
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    font-size: 27.2px;
+    font-size: 24px;
     text-decoration: none;
     line-height: 1;
   }
@@ -182,18 +183,22 @@
   padding: 0;
   list-style: none;
 
+  li {
+    list-style-type:none;
+  }
+
   a {
     color: #ffffff;
     text-decoration: none;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 15.2px;
-    line-height: 15px;
+    font-size: 14px;
+    line-height: 1.2;
   }
 }
 
 .utilityPrimary {
-  margin-bottom: 8px;
-  margin-left: 272px;
+  margin-bottom: 10px;
+  margin-left: 85px;
 
   a {
     font-weight: 600;
@@ -206,8 +211,8 @@
 }
 
 .utilitySecondary {
-  margin-bottom: 18px;
-  margin-left: 272px;
+  margin-bottom: 16px;
+  margin-left: 85px;
 
   a {
     font-weight: 400;
@@ -216,43 +221,43 @@
 }
 
 .copyright {
-  margin: 0 0 0 272px;
+  margin: 0 0 0 85px;
   color: #ffffff;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 15.2px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 1.5;
   font-weight: 400;
 }
 
 @media (max-width: $breakpoint-medium) {
   .footer::before {
-    height: 64px;
-    clip-path: polygon(0 0, 100% 0, 100% 30px, 50% 56px, 0 28px);
+    height: 56px;
+    clip-path: polygon(0 0, 100% 0, 100% 24px, 50% 44px, 0 20px);
   }
 
   .main {
     min-height: auto;
 
     &::before {
-      height: 88px;
-      clip-path: polygon(0 10px, 100% 0, 100% 46px, 78% 18px, 50% 34px, 24% 20px, 0 34px);
+      height: 78px;
+      clip-path: polygon(0 10px, 100% 0, 100% 40px, 78% 16px, 50% 28px, 24% 18px, 0 30px);
     }
 
     &::after {
-      top: 38px;
-      height: 116px;
-      clip-path: polygon(0 0, 100% 30px, 100% 96px, 0 60px);
+      top: 32px;
+      height: 102px;
+      clip-path: polygon(0 0, 100% 24px, 100% 86px, 0 50px);
     }
   }
 
   .wrap {
-    padding: 96px 32px 48px;
+    padding: 88px 32px 44px;
   }
 
   .topMeta {
     grid-template-columns: 1fr 1fr;
-    row-gap: 32px;
-    margin-bottom: 64px;
+    row-gap: 28px;
+    margin-bottom: 54px;
   }
 
   .contact {
@@ -269,25 +274,25 @@
 
 @media (max-width: $breakpoint-small) {
   .footer::before {
-    height: 46px;
-    clip-path: polygon(0 0, 100% 0, 100% 20px, 50% 38px, 0 18px);
+    height: 40px;
+    clip-path: polygon(0 0, 100% 0, 100% 16px, 50% 30px, 0 14px);
   }
 
   .main {
     &::before {
-      height: 62px;
-      clip-path: polygon(0 8px, 100% 0, 100% 30px, 78% 12px, 50% 24px, 24% 14px, 0 24px);
+      height: 54px;
+      clip-path: polygon(0 8px, 100% 0, 100% 24px, 78% 10px, 50% 18px, 24% 12px, 0 20px);
     }
 
     &::after {
-      top: 26px;
-      height: 76px;
-      clip-path: polygon(0 0, 100% 22px, 100% 62px, 0 40px);
+      top: 22px;
+      height: 66px;
+      clip-path: polygon(0 0, 100% 18px, 100% 54px, 0 34px);
     }
   }
 
   .wrap {
-    padding: 72px 20px 40px;
+    padding: 66px 20px 36px;
   }
 
   .topMeta {
@@ -296,13 +301,13 @@
     margin-bottom: 40px;
 
     h3 {
-      font-size: 24px;
-      line-height: 24px;
+      font-size: 22px;
+      line-height: 1;
     }
 
     p,
     a {
-      font-size: 17px;
+      font-size: 16px;
       line-height: 22px;
     }
   }
@@ -318,18 +323,18 @@
   }
 
   .brandName {
-    font-size: 24px !important;
-    line-height: 30px;
+    font-size: 22px !important;
+    line-height: 1.3;
   }
 
   .logoLink :global(img) {
-    width: 220px;
+    width: 210px;
   }
 
   .brandAddress,
   .mainPhone {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: 1.45;
   }
 
   .social {
@@ -340,7 +345,7 @@
     gap: 10px 14px;
 
     a {
-      font-size: 14px;
+      font-size: 13px;
     }
   }
 }
