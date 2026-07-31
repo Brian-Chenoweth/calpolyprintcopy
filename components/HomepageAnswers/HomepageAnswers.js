@@ -40,10 +40,10 @@ export default function HomepageAnswers() {
           <div className={styles.resourcePanel}>
             <div className={styles.resourceMedia}>
               <Image
-                src="/static/cal-poly-campus-mustang-way-students-biking-walking.jpg"
+                src="/static/cal-poly-print-copy-online-ordering.jpg"
                 width={640}
                 height={420}
-                alt="Placeholder resource image"
+                alt="Hands typing on a laptop keyboard to submit an online print order."
                 className={styles.resourceImage}
               />
             </div>

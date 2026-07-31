@@ -9,16 +9,18 @@
   width: 100vw;
   margin: 0 calc(50% - 50vw);
   padding: clamp(5.2rem, 6.6vw, 8rem) 0;
-  background: #b7d2c9;
+  background-color: #b7d2c9;
+  background-image: url('/static/need-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
 
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(circle at 12% 18%, rgba(14, 88, 67, 0.22) 0 1px, transparent 1px) 0 0 / 120px 90px,
-      radial-gradient(circle at 65% 62%, rgba(14, 88, 67, 0.16) 0 1px, transparent 1px) 0 0 / 155px 120px;
+    // background: rgba(14, 88, 67, 0.38);
     pointer-events: none;
   }
 }
@@ -26,7 +28,7 @@
 .resourcePanel {
   position: relative;
   z-index: 1;
-  max-width: 110rem;
+  max-width: 136rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -56,6 +58,7 @@
     line-height: 1;
     color: #0e5843;
     text-transform: uppercase;
+    font-weight: 400;
 
     span {
       display: block;
@@ -87,16 +90,37 @@
 }
 
 .portalLink {
-  margin-top: 1.4rem;
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
   border: 0;
   background: transparent !important;
   color: #0e5843 !important;
-  font-family: 'abolition', sans-serif;
-  font-size: 1.9rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  font-family: 'Source Sans Pro', sans-serif;
+  // font-size: clamp(4.2rem, 3.8vw, 5.8rem);
+  font-weight: 700;
+  // letter-spacing: 0.01em;
+  line-height: 1;
   text-transform: uppercase;
   padding: 0;
+  text-decoration: none;
+
+  &::before {
+    content: '\f061';
+    font-family: 'Font Awesome 6 Free';
+    display: inline-block !important;
+    color: $gold;
+    font-size: 0.82em;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: #0e5843 !important;
+    text-decoration: none;
+  }
 }
 
 .supportSection {
