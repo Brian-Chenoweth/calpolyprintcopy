@@ -20,7 +20,7 @@
 
 .brand-strip {
   background: #104735;
-  padding: 0.35rem 0 0.45rem;
+  padding: .5rem 0;
 }
 
 .title-strip {
@@ -34,7 +34,7 @@
   justify-content: space-between;
   gap: 1.5rem;
   min-height: 2.9rem;
-  padding: 1rem 0;
+  padding: 1.2rem 0;
 
   @media (min-width: $breakpoint-small) {
     min-height: 3.1rem;
@@ -45,7 +45,7 @@
 .logo {
   width: clamp(11.5rem, 10.2vw, 16rem);
   min-width: 11.5rem;
-  margin: 0.15rem 0;
+  margin:  0;
   height: auto;
   flex: 0 0 auto;
 }
@@ -54,7 +54,7 @@
   margin: 0;
   color: #104735;
   font-family: 'utopia-std-display', serif;
-  font-size: clamp(1.6rem, 1.2vw, 3.5rem);
+  font-size: 3.5rem;
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.1;
