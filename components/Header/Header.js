@@ -86,7 +86,9 @@ export default function Header({ className, menuItems }) {
       <div className={cx('title-strip')}>
         <div className={headerContentClasses}>
           <div className={cx('bar')}>
-            <p className={cx('site-title')}>{siteTitle}</p>
+            <Link href="/" title="Home" className={cx('site-title')}>
+              {siteTitle}
+            </Link>
               <NavigationMenu
                 id={cx('primary-navigation')}
                 className={navClasses}

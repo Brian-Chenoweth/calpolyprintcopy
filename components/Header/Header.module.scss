@@ -51,6 +51,7 @@
 }
 
 .site-title {
+  display: inline-block;
   margin: 0;
   color: #104735;
   font-family: 'utopia-std-display', serif;
@@ -58,6 +59,16 @@
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.1;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active,
+  &:visited {
+    color: #104735;
+    text-decoration: none;
+  }
 }
 
 .nav-toggle {
