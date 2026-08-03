@@ -8,7 +8,7 @@
 .resourceBand {
   width: 100vw;
   margin: 0 calc(50% - 50vw);
-  padding: clamp(5.2rem, 6.6vw, 8rem) 0;
+  padding: 5rem 1.75rem;
   background-color: #b7d2c9;
   background-image: url('/static/need-bg.jpg');
   background-position: center;
@@ -120,7 +120,7 @@
 }
 
 .supportSection {
-  padding: clamp(6rem, 7vw, 8.8rem) 0 clamp(4rem, 5vw, 5.8rem);
+  padding: 5rem 1.75rem;
   background: #f8f8f7;
 }
 
@@ -255,7 +255,7 @@
   }
 
   .supportSection {
-    padding-top: 4.8rem;
+    // padding-top: 4.8rem;
   }
 
   .portalLink {
@@ -267,7 +267,7 @@
   }
 
   .helpContent {
-    padding: 3rem 1.8rem 3.4rem;
+    padding: 5rem 1.75rem;
   }
 
   .helpInner {

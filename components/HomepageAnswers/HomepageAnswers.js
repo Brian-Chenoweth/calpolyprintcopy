@@ -36,7 +36,7 @@ export default function HomepageAnswers() {
   return (
     <section className={styles.answers} aria-label="Print and support information">
       <section className={styles.resourceBand}>
-        <div className="container">
+        <div>
           <div className={styles.resourcePanel}>
             <div className={styles.resourceMedia}>
               <Image
@@ -74,7 +74,7 @@ export default function HomepageAnswers() {
       </section>
 
       <section className={styles.supportSection} aria-labelledby="support-heading">
-        <div className="container">
+        <div>
           <h2 id="support-heading" className={styles.supportHeading}>
             Printing That Supports Cal Poly
           </h2>
