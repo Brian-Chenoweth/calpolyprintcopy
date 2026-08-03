@@ -18,17 +18,17 @@ const SUPPORT_CARDS = [
   {
     title: 'Reliable',
     image: '/static/cal-poly-print-copy-resume-printing.jpg',
-    copy: 'Student reviewing a printed resume beside a laptop displaying a digital copy.',
+    copy: 'Quality printing, dependable turnaround and support when you need it. Located right on campus and designed for the Cal Poly community.',
   },
   {
     title: 'Student-Friendly',
     image: '/static/cal-poly-students-walking-on-campus.jpg',
-    copy: 'Three Cal Poly students wearing backpacks walk together across campus.',
+    copy: 'From class presentations and research posters to club promotions and campus events, we understand student needs and campus deadlines.',
   },
   {
     title: 'Every Order Gives Back',
     image: '/static/cal-poly-students-campus-welcome-event.jpg',
-    copy: 'Cal Poly students and volunteers walking together during a campus welcome event.',
+    copy: 'Every purchase helps support the university community.  Print & Copy helps create student jobs and fund programs, services and opportunities that enhance the Mustang experience.',
   },
 ];
 
