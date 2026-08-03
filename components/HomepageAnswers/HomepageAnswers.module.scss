@@ -190,7 +190,8 @@
 }
 
 .helpContent {
-  background: #0d6d53;
+  background: linear-gradient(51.67deg, #004833 35%, #00845C 100%);
+  background: linear-gradient(51.67deg, color(display-p3 0.082 0.278 0.204) 35%, color(display-p3 0.149 0.510 0.373) 100%);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -231,6 +232,9 @@
   a {
     color: #ffffff;
     text-decoration: underline;
+    text-decoration-color: $gold;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
   }
 }
 

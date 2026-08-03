@@ -116,14 +116,14 @@ export default function HomepageAnswers() {
                 Need <span className={styles.gold}>Help?</span>
               </h2>
               <p className={styles.bigger}>
-                Not sure what to order? Have questions about file setup or sizing? We&apos;re happy to help.
+                Not sure what to order? Have questions about file setup or sizing? We&rsquo;re happy to help.
               </p>
               <p>
                 Email: <a href={`mailto:${LANDING_PAGE.email}`}>{LANDING_PAGE.email}</a>
               </p>
               <p>Phone: <a href="tel:8057562399">805-756-2399</a></p>
               <p>Location: Building 35, Room 112</p>
-              <p>Hours: Tuesday - Thursday, 9 AM - 1 PM</p>
+              <p>Hours: Tuesday - Thursday, 9 a.m. - 1 p.m.</p>
             </div>
           </div>
         </div>
