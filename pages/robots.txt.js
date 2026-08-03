@@ -5,7 +5,6 @@ export async function getServerSideProps({ res }) {
   const lines = [
     'User-agent: *',
     'Allow: /',
-    'Disallow: /search',
   ];
 
   if (siteUrl) {

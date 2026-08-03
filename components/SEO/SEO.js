@@ -87,21 +87,6 @@ export default function SEO({
     logo: toAbsoluteUrl('/logo.png', baseUrl),
   };
 
-  // Optional WebSite schema for Sitelinks Search
-  const webSiteSchema = baseUrl
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        url: baseUrl,
-        name: siteName,
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: `${baseUrl}/search?q={search_term_string}`,
-          'query-input': 'required name=search_term_string',
-        },
-      }
-    : null;
-
   // Optional Article schema when type is article or article props exist
   const articleSchema =
     type === 'article' || article
@@ -134,7 +119,7 @@ export default function SEO({
   const customSchemaBlocks = Array.isArray(schema) ? schema : [schema];
 
   // Merge in any custom schema blocks.
-  const jsonLd = [orgSchema, webSiteSchema, articleSchema, ...customSchemaBlocks]
+  const jsonLd = [orgSchema, articleSchema, ...customSchemaBlocks]
     .filter(Boolean)
     .map((obj) => JSON.stringify(obj));
 

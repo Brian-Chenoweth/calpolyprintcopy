@@ -66,6 +66,7 @@ export default function Component(props) {
 
   const page = props?.data?.page ?? { title: '' };
   const { title, content, featuredImage, seo: s } = page;
+  const isGraphicDesignGuidelines = page?.slug === 'graphic-design-request-guidelines';
 
   const htmlWithSlot = (content ?? '').split(TOKEN).join(SLOT_HTML);
 
@@ -117,11 +118,18 @@ export default function Component(props) {
         menuItems={primaryMenu}
       />
 
-      <Main>
-        <EntryHeader title={title} image={featuredImage?.node} />
+      <Main className={isGraphicDesignGuidelines ? 'graphic-design-request-guidelines-page' : undefined}>
+        <EntryHeader
+          title={title}
+          image={featuredImage?.node}
+          className={isGraphicDesignGuidelines ? 'guidelines-entry-header' : undefined}
+        />
 
         <div className="container">
-          <ContentWrapper content={htmlWithSlot} />
+          <ContentWrapper
+            content={htmlWithSlot}
+            className={isGraphicDesignGuidelines ? 'guidelines-content' : undefined}
+          />
           <ContactFormIntoSlot />
         </div>
       </Main>

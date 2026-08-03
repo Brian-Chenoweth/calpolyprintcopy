@@ -111,6 +111,41 @@
   pointer-events: auto;
 }
 
+.guidelines-entry-header {
+  color: #035642;
+
+  .overlay {
+    &.backpage-bg {
+      background: #fff;
+      // border-top: 1px solid rgba(16, 71, 53, 0.14);
+      // border-bottom: 1px solid rgba(16, 71, 53, 0.14);
+      // padding: 1.2rem 0 1.4rem;
+    }
+
+    > .container {
+      justify-content: flex-start;
+    }
+  }
+
+  .heading-home {
+    color: #035642;
+    font-family: 'abolition', sans-serif;
+    font-size: 7rem;
+    font-weight: 400;
+    margin-top: 5rem;
+    letter-spacing: 0.02em;
+    line-height: 0.95;
+    text-align: left;
+    text-transform: uppercase;
+    text-shadow: none;
+
+    @media (max-width: $breakpoint-small) {
+      font-size: 5.1rem;
+      line-height: 0.98;
+    }
+  }
+}
+
 
 .image {
   position: relative;

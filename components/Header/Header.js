@@ -1,7 +1,6 @@
 // Header.jsx
 import { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
-import { FaSearch } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -93,13 +92,7 @@ export default function Header({ className, menuItems }) {
                 className={navClasses}
                 menuItems={menuItems}
                 ref={menuRef}
-              >
-                <li>
-                  <Link href="/search" title="Search" className={cx('desktop-search-link')} passHref>
-                    <FaSearch title="Search" role="img" />
-                  </Link>
-                </li>
-              </NavigationMenu>
+              />
           </div>
         </div>
       </div>

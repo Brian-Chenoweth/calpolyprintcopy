@@ -12,7 +12,6 @@ The frontend currently provides:
 - Blog post listing and single-post pages
 - A custom `Project` content type archive and single template
 - Archive pages for content types, categories, and tags
-- A client-side search page backed by the WordPress GraphQL `contentNodes` query
 - Faust preview and API routes under `pages/api/faust`
 
 In addition to WordPress content, some homepage messaging is hardcoded in React components, including operating hours, closure notices, and the homepage CTA text.
@@ -30,10 +29,10 @@ High-level architecture:
 
 - `pages/index.js` and `pages/[...wordpressNode].js` hand routing off to `WordPressTemplate`
 - `wp-templates/` maps WordPress template types to React templates (`front-page`, `page`, `single`, `project`, `archive`)
-- `pages/posts`, `pages/projects`, and `pages/search` are custom Next.js routes with explicit GraphQL queries
+- `pages/posts` and `pages/projects` are custom Next.js routes with explicit GraphQL queries
 - `faust.config.js` registers custom Faust plugins:
   - `ProjectTemplatePlugin` adds the `project` template for `Project` nodes
-  - `RelayStylePaginationPlugin` enables Apollo relay-style pagination for posts, projects, and search results
+  - `RelayStylePaginationPlugin` enables Apollo relay-style pagination for posts and projects
 - `constants/menus.js` defines the WordPress menu locations the app expects
 
 ## Prerequisites
@@ -182,8 +181,6 @@ All of this is centralized in `constants/landingPageSeo.js`.
   - React templates used by Faust for WordPress nodes
 - `components/`
   - Shared UI, including header, footer, posts/projects lists, SEO, and the Formspree contact form
-- `queries/GetSearchResults.js`
-  - Search GraphQL query used by `/search`
 - `plugins/`
   - Custom Faust plugins for template selection and Apollo pagination
 - `constants/menus.js`
@@ -205,7 +202,6 @@ All of this is centralized in `constants/landingPageSeo.js`.
 
 - The page template injects the React contact form into WordPress page content when the page HTML contains `<!-- FORMSPREE_CONTACT -->`
 - The contact form submits to Formspree using a hardcoded form ID in `components/ContactForm/ContactForm.js`
-- Search is client-side and only runs after a user enters a query
 - The app uses `fallback: 'blocking'` for WordPress catch-all routes in `pages/[...wordpressNode].js`
 
 ## Known Gaps And Verified TODOs
