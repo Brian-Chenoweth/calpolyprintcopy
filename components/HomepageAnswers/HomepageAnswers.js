@@ -73,6 +73,7 @@ export default function HomepageAnswers() {
         </div>
       </section>
 
+
       <section className={styles.supportSection} aria-labelledby="support-heading">
         <div>
           <h2 id="support-heading" className={styles.supportHeading}>
@@ -95,6 +96,28 @@ export default function HomepageAnswers() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className={styles.goSection} aria-labelledby="go-heading">
+        <div className={styles.goInner}>
+          <h2 id="go-heading" className={styles.goHeading}>
+            Need to print on the go?
+          </h2>
+          <p className={styles.goDescription}>
+            Mustang Prints makes self-service printing easy. Print, copy or scan at
+            convenient kiosk locations across campus. Send your files ahead of time
+            or walk up and print directly at the kiosk.
+          </p>
+
+          <a
+            href="/mustang-prints"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.goButton}
+          >
+            Find a Mustang Prints kiosk
+          </a>
         </div>
       </section>
 

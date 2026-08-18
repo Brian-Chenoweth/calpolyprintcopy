@@ -119,6 +119,60 @@
   }
 }
 
+.goSection {
+  padding: 8rem 0;
+  // background: #f2f2f0;
+}
+
+.goInner {
+  max-width: 104rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.goHeading {
+  margin: 0 0 4rem;
+  color: #0e5843;
+  font-family: 'abolition', sans-serif;
+  font-size: clamp(4.2rem, 4vw, 6.2rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.goDescription {
+  max-width: 94rem;
+  margin: 0 auto 4rem;
+  color: #2a3b35;
+  font-family: 'utopia-std-display', serif;
+  font-size: clamp(1.6rem, 2vw, 2.5rem);
+  line-height: 1.45;
+}
+
+.goButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 27rem;
+  padding: 1.5rem 2.8rem;
+  background: #36863A;
+  border: 0;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: #0b4738;
+  }
+}
+
 .supportSection {
   padding: 5rem 1.75rem;
   background: #f8f8f7;
@@ -256,6 +310,15 @@
       font-size: 1.55rem;
       line-height: 1.55;
     }
+  }
+
+  .goSection {
+    padding-top: 4rem;
+  }
+
+  .goButton {
+    width: 100%;
+    min-width: 0;
   }
 
   .supportSection {
