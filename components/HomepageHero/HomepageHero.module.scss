@@ -7,11 +7,17 @@
   margin-top: 58px;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background-image: url('/static/print-copy-hero.jpg');
-  background-repeat: no-repeat;
-  background-position: 58% 43%;
-  background-size: cover;
   overflow: hidden;
+}
+
+.heroMedia {
+  position: absolute;
+  inset: 0;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: 58% 43%;
 }
 
 .heroOverlay {
@@ -76,7 +82,10 @@
   .homepageHero {
     margin-top: 72px;
     min-height: clamp(36rem, 92vw, 52rem);
-    background-position: 56% 40%;
+  }
+
+  .heroImage {
+    object-position: 56% 40%;
   }
 
   .heroContent {
@@ -100,6 +109,9 @@
 @media (max-width: 420px) {
   .homepageHero {
     min-height: 40rem;
-    background-position: 60% 43%;
+  }
+
+  .heroImage {
+    object-position: 60% 43%;
   }
 }

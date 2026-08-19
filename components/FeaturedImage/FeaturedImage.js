@@ -18,6 +18,7 @@ export default function FeaturedImage({
   image,
   width,
   height,
+  sizes,
   ...props
 }) {
   const router = useRouter(); // 👈 use the router
@@ -49,6 +50,8 @@ export default function FeaturedImage({
         width={width}
         height={height}
         alt={altText}
+        sizes={sizes ?? '100vw'}
+        quality={72}
         objectFit="cover"
         layout="responsive"
         {...props}

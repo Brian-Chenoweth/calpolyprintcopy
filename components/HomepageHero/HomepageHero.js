@@ -1,8 +1,22 @@
+import Image from 'next/image';
+
 import styles from './HomepageHero.module.scss';
 
 export default function HomepageHero() {
   return (
     <section className={styles.homepageHero} aria-label="Cal Poly Print and Copy hero">
+      <div className={styles.heroMedia}>
+        <Image
+          src="/static/print-copy-hero.jpg"
+          alt="Cal Poly students collaborating at a table with printed materials."
+          fill
+          priority
+          fetchPriority="high"
+          quality={72}
+          sizes="100vw"
+          className={styles.heroImage}
+        />
+      </div>
       <div className={styles.heroOverlay} />
       <div className={styles.heroContent}>
         <span className={styles.heroLine} aria-hidden="true" />
