@@ -38,6 +38,18 @@ export default function Footer({ siteTitle }) {
             <div>
               <h3>Location</h3>
               <p>Building 35, Room 112</p>
+              <p>
+                <a href="https://maps.app.goo.gl/U7Gt1RDU8HKSxXhh9" target="_blank" rel="noopener noreferrer">
+                  1 Grand Avenue, San Luis Obispo, CA 93407
+                </a>
+              </p>
+            </div>
+
+            <div>
+              <h3>Hours</h3>
+              <p>Monday - Thursday: 8am - 5pm</p>
+              <p>Friday: 8am - 4pm</p>
+              <p>Closed Sat & Sun</p>
             </div>
 
             <div>
