@@ -19,14 +19,22 @@ export const LANDING_PAGE = {
     longitude: -120.6596,
   },
   openingHours: [
-    'Tuesday - Thursday: 9:00 AM - 1:00 PM',
+    'Monday - Thursday: 8:00 AM - 5:00 PM',
+    'Friday: 8:00 AM - 4:00 PM',
+    'Saturday - Sunday: Closed',
   ],
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday'],
-      opens: '09:00',
-      closes: '13:00',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+      opens: '08:00',
+      closes: '17:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Friday'],
+      opens: '08:00',
+      closes: '16:00',
     },
   ],
   serviceArea: ['On-Campus', 'San Luis Obispo', 'San Luis Obispo County'],
@@ -51,7 +59,7 @@ export const LANDING_PAGE = {
 
 export const LANDING_PAGE_CITATION_FACTS = [
   'Cal Poly Print & Copy is located at 1 Grand Ave., Building 35, San Luis Obispo, CA 93407.',
-  'Current office hours are Tuesday through Thursday from 9:00 AM to 1:00 PM.',
+  'Current office hours are Monday through Thursday from 8:00 AM to 5:00 PM, and Friday from 8:00 AM to 4:00 PM. Closed Saturday and Sunday.',
   'Students, faculty/staff, and the public can place print orders online.',
   'Primary service area includes on-campus locations, San Luis Obispo, and San Luis Obispo County.',
   'Core services include Basic Copies, Banners, Booklets/Programs, Brochures, Posters, and Signage.',
@@ -242,7 +250,7 @@ export const LANDING_PAGE_FAQS = [
   {
     question: 'What are your hours of operation?',
     answer:
-      'Current office hours are Tuesday through Thursday from 9:00 AM to 1:00 PM. Hours may change seasonally.',
+      'Current office hours are Monday through Thursday from 8:00 AM to 5:00 PM, and Friday from 8:00 AM to 4:00 PM. Closed Saturday and Sunday. Hours may change seasonally.',
   },
   {
     question: 'Can someone else pick up my order for me?',

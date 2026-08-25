@@ -146,7 +146,7 @@ export default function HomepageAnswers() {
               </p>
               <p>Phone: <a href="tel:8057562399">805-756-2399</a></p>
               <p>Location: Building 35, Room 112</p>
-              <p>Hours: Tuesday - Thursday, 9 a.m. - 1 p.m.</p>
+              <p>Hours: Monday - Thursday, 8 a.m. - 5 p.m. <br/> Friday, 8 a.m. - 4 p.m. <br/> Closed Sat & Sun</p>
             </div>
           </div>
         </div>
