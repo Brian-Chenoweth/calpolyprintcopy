@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+import { LANDING_PAGE, withOrderUtm } from 'constants/landingPageSeo';
 import { NavigationMenu, SkipNavigationLink } from '../';
 
 import styles from './Header.module.scss';
@@ -30,6 +31,7 @@ export default function Header({ className, menuItems }) {
   const menuRef = useRef(null);
 
   const siteTitle = 'Print & Copy';
+  const orderHref = withOrderUtm(LANDING_PAGE.orderUrl, 'header_order_link');
 
   const headerClasses = cx('header', className, { scrolled: isScrolled });
   const headerContentClasses = cx('container', 'header-content', { scrolled: isScrolled });
@@ -89,6 +91,9 @@ export default function Header({ className, menuItems }) {
             <Link href="/" title="Home" className={cx('site-title')}>
               {siteTitle}
             </Link>
+            <a href={orderHref} target="_blank" rel="noopener noreferrer" className={cx('portal-button')}>
+              Order Printing
+            </a>
               <NavigationMenu
                 id={cx('primary-navigation')}
                 className={navClasses}

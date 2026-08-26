@@ -61,6 +61,51 @@
   text-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
 }
 
+// .orderButton {
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 14px 24px;
+//   background-color: #1b6b43;
+//   color: #ffffff;
+//   font-family: 'Karla', sans-serif;
+//   font-size: 1.1rem;
+//   font-weight: 700;
+//   text-decoration: none;
+//   text-transform: uppercase;
+//   letter-spacing: 0.06em;
+//   border-radius: 0;
+//   transition: background-color 0.2s ease;
+
+//   &:hover,
+//   &:focus-visible {
+//     background-color: #154734;
+//   }
+// }
+
+.orderButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: #2f8f3f;
+  color: #ffffff;
+  font-family: 'Karla', sans-serif;
+  // font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  // letter-spacing: 0.06em;
+  border-radius: 0;
+  transition: background-color 0.2s ease;
+  margin-top: 3rem;
+
+  &:hover,
+  &:focus-visible {
+    background-color: #257633;
+  }
+}
+
 @media (max-width: 1200px) and (min-width: $breakpoint-small) {
   .heroContent {
     left: clamp(2.4rem, 6vw, 8rem);

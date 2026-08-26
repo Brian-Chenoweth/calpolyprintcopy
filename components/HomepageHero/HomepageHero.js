@@ -1,8 +1,11 @@
 import Image from 'next/image';
 
+import { LANDING_PAGE, withOrderUtm } from 'constants/landingPageSeo';
 import styles from './HomepageHero.module.scss';
 
 export default function HomepageHero() {
+  const orderHref = withOrderUtm(LANDING_PAGE.orderUrl, 'homepage_hero_order_link');
+
   return (
     <section className={styles.homepageHero} aria-label="Cal Poly Print and Copy hero">
       <div className={styles.heroMedia}>
@@ -22,6 +25,9 @@ export default function HomepageHero() {
         <span className={styles.heroLine} aria-hidden="true" />
         <h1 className={styles.heroTitle}>Bring Your Ideas to Life</h1>
         <span className={styles.heroLine} aria-hidden="true" />
+        <a href={orderHref} target="_blank" rel="noopener noreferrer" className={styles.orderButton}>
+          Order Printing
+        </a>
       </div>
     </section>
   );

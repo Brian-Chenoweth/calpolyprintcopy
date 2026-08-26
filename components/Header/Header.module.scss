@@ -71,6 +71,28 @@
   }
 }
 
+.portal-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #2f8f3f;
+  color: #ffffff;
+  font-family: 'Karla', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  // letter-spacing: 0.06em;
+  border-radius: 0;
+  transition: background-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: #257633;
+  }
+}
+
 .nav-toggle {
   display: inline-flex;
   align-items: center;
