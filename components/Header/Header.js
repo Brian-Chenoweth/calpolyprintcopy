@@ -40,6 +40,8 @@ export default function Header({ className, menuItems }) {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 0);
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

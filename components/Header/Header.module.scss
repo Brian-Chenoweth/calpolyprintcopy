@@ -72,7 +72,7 @@
 }
 
 .portal-button {
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 1rem;
@@ -91,6 +91,14 @@
   &:focus-visible {
     background-color: #257633;
   }
+
+  .scrolled & {
+    display: inline-flex;
+  }
+}
+
+:global(html[data-hero-order-visible='true']) .portal-button {
+  display: none;
 }
 
 .nav-toggle {
