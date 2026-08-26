@@ -1,11 +1,12 @@
 // Header.jsx
+import { LANDING_PAGE, withOrderUtm } from 'constants/landingPageSeo';
+
 import { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { LANDING_PAGE, withOrderUtm } from 'constants/landingPageSeo';
 import { NavigationMenu, SkipNavigationLink } from '../';
 
 import styles from './Header.module.scss';

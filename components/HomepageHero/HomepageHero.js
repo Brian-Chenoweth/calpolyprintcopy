@@ -1,6 +1,7 @@
+import { LANDING_PAGE, withOrderUtm } from 'constants/landingPageSeo';
+
 import Image from 'next/image';
 
-import { LANDING_PAGE, withOrderUtm } from 'constants/landingPageSeo';
 import styles from './HomepageHero.module.scss';
 
 export default function HomepageHero() {
